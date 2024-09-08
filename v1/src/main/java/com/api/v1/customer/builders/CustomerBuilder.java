@@ -1,4 +1,4 @@
-package com.api.v1.customer.builder;
+package com.api.v1.customer.builders;
 
 import com.api.v1.customer.domain.Customer;
 import com.api.v1.customer.dtos.CustomerRegistrationRequestDto;
