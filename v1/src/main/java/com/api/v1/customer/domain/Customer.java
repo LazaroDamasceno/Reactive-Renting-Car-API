@@ -1,4 +1,4 @@
-package com.api.v1.customer;
+package com.api.v1.customer.domain;
 
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
@@ -25,6 +25,9 @@ public class Customer {
     private String lastName;
 
     @Field
+    private String ssn;
+
+    @Field
     private LocalDate birthDate;
 
     @Field
@@ -47,6 +50,7 @@ public class Customer {
             String firstName,
             String middleName,
             String lastName,
+            String ssn,
             LocalDate birthDate,
             String email,
             String address,
@@ -57,6 +61,7 @@ public class Customer {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
+        this.ssn = ssn;
         this.birthDate = birthDate;
         this.email = email;
         this.address = address;
