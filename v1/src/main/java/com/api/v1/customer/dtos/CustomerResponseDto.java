@@ -3,9 +3,7 @@ package com.api.v1.customer.dtos;
 import java.time.LocalDate;
 
 public record CustomerResponseDto(
-        String firstName,
-        String middleName,
-        String lastName,
+        String fullName,
         String ssn,
         LocalDate birthDate,
         String email,
