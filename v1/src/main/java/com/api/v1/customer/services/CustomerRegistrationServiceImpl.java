@@ -7,6 +7,7 @@ import com.api.v1.customer.domain.CustomerRepository;
 import com.api.v1.customer.dtos.CustomerRegistrationRequestDto;
 import com.api.v1.customer.dtos.CustomerResponseDto;
 import com.api.v1.customer.exceptions.DuplicatedSsnException;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -18,7 +19,7 @@ class CustomerRegistrationServiceImpl implements CustomerRegistrationService {
     private final CustomerRepository customerRepository;
 
     @Override
-    public Mono<CustomerResponseDto> register(CustomerRegistrationRequestDto request) {
+    public Mono<CustomerResponseDto> register(@Valid CustomerRegistrationRequestDto request) {
         return customerRepository
                 .findAll()
                 .hasElements()
