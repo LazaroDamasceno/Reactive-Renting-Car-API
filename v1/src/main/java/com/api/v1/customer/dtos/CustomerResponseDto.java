@@ -2,7 +2,7 @@ package com.api.v1.customer.dtos;
 
 import java.time.LocalDate;
 
-public record CustomerRegistrationRequestDto(
+public record CustomerResponseDto(
         String firstName,
         String middleName,
         String lastName,
@@ -10,6 +10,8 @@ public record CustomerRegistrationRequestDto(
         LocalDate birthDate,
         String email,
         String address,
-        String phoneNumber
+        String phoneNumber,
+        String createdAt,
+        String updatedAt
 ) {
 }
