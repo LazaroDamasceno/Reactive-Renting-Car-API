@@ -1,6 +1,6 @@
 package com.api.v1.customer.services;
 
-import com.api.v1.customer.CustomerResponseMapper;
+import com.api.v1.customer.mappers.CustomerResponseMapper;
 import com.api.v1.customer.builders.CustomerBuilder;
 import com.api.v1.customer.domain.Customer;
 import com.api.v1.customer.domain.CustomerRepository;
