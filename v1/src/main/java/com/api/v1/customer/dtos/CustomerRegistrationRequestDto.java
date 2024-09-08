@@ -1,6 +1,6 @@
 package com.api.v1.customer.dtos;
 
-import com.api.v1.customer.SSN;
+import com.api.v1.customer.annotations.SSN;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

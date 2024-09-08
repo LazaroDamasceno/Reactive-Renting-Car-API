@@ -1,4 +1,4 @@
-package com.api.v1.customer;
+package com.api.v1.customer.annotations;
 
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
