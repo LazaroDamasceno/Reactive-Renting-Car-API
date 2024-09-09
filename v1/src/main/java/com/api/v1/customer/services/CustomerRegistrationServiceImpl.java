@@ -30,7 +30,7 @@ class CustomerRegistrationServiceImpl implements CustomerRegistrationService {
                     return Mono.defer(() -> {
                         Customer customer = CustomerBuilder.create().fromDto(request).build();
                         return customerRepository.save(customer);
-                    }).flatMap(savedCustomer -> Mono.just(CustomerResponseMapper.map(savedCustomer)));
+                    }).flatMap(CustomerResponseMapper::map);
                 });
     }
 
