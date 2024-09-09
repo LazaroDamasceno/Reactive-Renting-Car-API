@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-public class CustomerUpdatingServiceImpl implements CustomerUpdatingService {
+class CustomerUpdatingServiceImpl implements CustomerUpdatingService {
 
     @Autowired
     private CustomerFinderUtil customerFinderUtil;
