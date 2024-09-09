@@ -9,14 +9,15 @@ import com.api.v1.customer.dtos.CustomerResponseDto;
 import com.api.v1.customer.exceptions.DuplicatedSsnException;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
 
 @Service
-@RequiredArgsConstructor
 class CustomerRegistrationServiceImpl implements CustomerRegistrationService {
 
-    private final CustomerRepository customerRepository;
+    @Autowired
+    private CustomerRepository customerRepository;
 
     @Override
     public Mono<CustomerResponseDto> register(@Valid CustomerRegistrationRequestDto request) {

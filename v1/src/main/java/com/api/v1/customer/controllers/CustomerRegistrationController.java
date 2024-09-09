@@ -5,15 +5,16 @@ import com.api.v1.customer.dtos.CustomerResponseDto;
 import com.api.v1.customer.services.CustomerRegistrationService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("api/v1/customers")
-@RequiredArgsConstructor
 public class CustomerRegistrationController {
 
+    @Autowired
     private CustomerRegistrationService service;
 
     @PostMapping
