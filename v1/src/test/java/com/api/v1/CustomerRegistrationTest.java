@@ -16,9 +16,9 @@ import java.time.LocalDate;
 class CustomerRegistrationTest {
 
 	@Autowired
-	private WebTestClient webTestClient;
+	WebTestClient webTestClient;
 
-	private CustomerRegistrationRequestDto request = new CustomerRegistrationRequestDto(
+	CustomerRegistrationRequestDto request = new CustomerRegistrationRequestDto(
 			"Leo",
 			"",
 			"Santos",
