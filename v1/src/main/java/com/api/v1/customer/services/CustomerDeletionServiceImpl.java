@@ -23,7 +23,7 @@ class CustomerDeletionServiceImpl implements CustomerDeletionService {
                 .findAll()
                 .hasElements()
                 .flatMap(hasElements -> {
-                    if (hasElements) return Mono.error(CustomerEntityNotExistsException::new);
+                    if (!hasElements) return Mono.error(CustomerEntityNotExistsException::new);
                     return customerRepository.deleteAll();
                 });
     }
