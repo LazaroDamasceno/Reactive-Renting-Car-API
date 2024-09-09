@@ -32,7 +32,7 @@ class CustomerDeletionServiceImpl implements CustomerDeletionService {
     public Mono<Void> deleteBySsn(@SSN String ssn) {
         return customerFinderUtil
                 .find(ssn)
-                .flatMap(customer -> customerRepository.save(customer))
+                .flatMap(customer -> customerRepository.delete(customer))
                 .then();
     }
 
