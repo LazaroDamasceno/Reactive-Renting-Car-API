@@ -1,11 +1,13 @@
 package com.api.v1.customer.domain;
 
+import com.api.v1.customer.dtos.CustomerUpdatingRequestDto;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Getter
@@ -74,6 +76,17 @@ public class Customer {
             return "%s %s".formatted(firstName, lastName);
         }
         return "%s %s %s".formatted(firstName, middleName, lastName);
+    }
+
+    public void update(CustomerUpdatingRequestDto requestDto) {
+        this.firstName = requestDto.firstName();
+        this.middleName = requestDto.middleName();
+        this.lastName = requestDto.lastName();
+        this.birthDate = requestDto.birthDate();
+        this.email = requestDto.email();
+        this.address = requestDto.address();
+        this.phoneNumber = requestDto.phoneNumber();
+        this.updatedAt = ZonedDateTime.now().toString();
     }
 
 }
