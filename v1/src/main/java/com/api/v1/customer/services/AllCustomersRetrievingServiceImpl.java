@@ -2,7 +2,6 @@ package com.api.v1.customer.services;
 
 import com.api.v1.EmptyFluxException;
 import com.api.v1.customer.annotations.SSN;
-import com.api.v1.customer.domain.Customer;
 import com.api.v1.customer.domain.CustomerRepository;
 import com.api.v1.customer.dtos.CustomerResponseDto;
 import com.api.v1.customer.mappers.CustomerResponseMapper;
@@ -13,7 +12,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @Service
-class AllCustomerRetrievingServiceImpl implements AllCustomerRetrievingService {
+class AllCustomersRetrievingServiceImpl implements AllCustomersRetrievingService {
 
     @Autowired
     private CustomerFinderUtil customerFinderUtil;
