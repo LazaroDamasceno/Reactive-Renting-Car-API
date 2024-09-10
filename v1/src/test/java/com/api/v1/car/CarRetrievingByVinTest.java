@@ -15,11 +15,10 @@ class CarRetrievingByVinTest {
     @Autowired
     WebTestClient webTestClient;
 
-    String vin = "12345678901234567";
-
     @Test
     @Order(1)
     void testSuccessfulCarRetrievingByVin() {
+        String vin = "12345678901234567";
         webTestClient
                 .get()
                 .uri("api/v1/cars/%s".formatted(vin))
@@ -31,6 +30,7 @@ class CarRetrievingByVinTest {
     @Test
     @Order(2)
     void testUnsuccessfulCarRetrievingByVin() {
+        String vin = "12345678901234566";
         webTestClient
                 .get()
                 .uri("api/v1/cars/%s".formatted(vin))
