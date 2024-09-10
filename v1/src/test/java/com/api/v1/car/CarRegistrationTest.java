@@ -28,7 +28,7 @@ class CarRegistrationTest {
     }
 
     @Test
-    @Order(1)
+    @Order(2)
     void testUnsuccessfulCarRegistration() {
         webTestClient
                 .post()
