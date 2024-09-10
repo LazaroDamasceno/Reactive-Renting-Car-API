@@ -28,7 +28,7 @@ class CustomerUpdatingServiceImpl implements CustomerUpdatingService {
                     customer.update(requestDto);
                     return customerRepository.save(customer);
                 })
-                .flatMap(CustomerResponseMapper::map);
+                .flatMap(CustomerResponseMapper::mapToMono);
     }
 
 }

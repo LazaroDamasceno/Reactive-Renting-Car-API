@@ -8,7 +8,6 @@ import com.api.v1.customer.dtos.CustomerRegistrationRequestDto;
 import com.api.v1.customer.dtos.CustomerResponseDto;
 import com.api.v1.customer.exceptions.DuplicatedSsnException;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -30,7 +29,7 @@ class CustomerRegistrationServiceImpl implements CustomerRegistrationService {
                     return Mono.defer(() -> {
                         Customer customer = CustomerBuilder.create().fromDto(request).build();
                         return customerRepository.save(customer);
-                    }).flatMap(CustomerResponseMapper::map);
+                    }).flatMap(CustomerResponseMapper::mapToMono);
                 });
     }
 
