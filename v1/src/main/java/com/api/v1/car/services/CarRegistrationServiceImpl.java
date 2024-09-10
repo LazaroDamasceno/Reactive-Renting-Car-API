@@ -27,6 +27,7 @@ class CarRegistrationServiceImpl implements CarRegistrationService {
                     if (exists) return Mono.error(new DuplicatedVinException(requestDto.vin()));
                     return Mono.defer(() -> {
                         Car car = CarBuilder.create().fromDto(requestDto).build();
+                        car.getPlateNumbers().add(requestDto.plateNumber());
                         return repository.save(car);
                     }).flatMap(CarResponseMapper::mapToMono);
                 });
