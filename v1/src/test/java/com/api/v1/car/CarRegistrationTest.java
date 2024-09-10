@@ -1,5 +1,6 @@
 package com.api.v1.car;
 
+import com.api.v1.car.dtos.CarRegistrationRequestDto;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -15,13 +16,21 @@ class CarRegistrationTest {
     @Autowired
     private WebTestClient webTestClient;
 
+    CarRegistrationRequestDto requestDto = new CarRegistrationRequestDto(
+            "GM",
+            "RAM",
+            2024,
+            "12345678901234567",
+            "1234567"
+    );
+
     @Test
     @Order(1)
     void testSuccessfulCarRegistration() {
         webTestClient
                 .post()
                 .uri("api/v1/cars")
-                //.bodyValue()
+                .bodyValue(requestDto)
                 .exchange()
                 .expectStatus()
                 .is2xxSuccessful();
@@ -33,7 +42,7 @@ class CarRegistrationTest {
         webTestClient
                 .post()
                 .uri("api/v1/cars")
-                //.bodyValue()
+                .bodyValue(requestDto)
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();
