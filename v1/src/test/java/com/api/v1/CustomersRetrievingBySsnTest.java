@@ -15,6 +15,7 @@ class CustomersRetrievingBySsnTest {
     @Autowired
     WebTestClient webTestClient;
 
+    @Order(1)
     @Test
     void testSuccessfulCustomerRetrievingBySSn() {
         webTestClient
