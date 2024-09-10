@@ -1,4 +1,4 @@
-package com.api.v1;
+package com.api.v1.customer;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

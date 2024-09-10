@@ -1,4 +1,4 @@
-package com.api.v1;
+package com.api.v1.customer;
 
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
@@ -10,16 +10,16 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomersRetrievingBySsnTest {
+class CustomerDeletionBySsnTest {
 
     @Autowired
     WebTestClient webTestClient;
 
     @Order(1)
     @Test
-    void testSuccessfulCustomerRetrievingBySSn() {
+    void testSuccessfulCustomerBySsnDeletion() {
         webTestClient
-                .get()
+                .delete()
                 .uri("api/v1/customers/%s".formatted("123456789"))
                 .exchange()
                 .expectStatus()
@@ -28,14 +28,13 @@ class CustomersRetrievingBySsnTest {
 
     @Order(2)
     @Test
-    void testUnsuccessfulCustomerRetrievingBySSn() {
+    void testUnsuccessfulAllCustomerBySsnDeletion() {
         webTestClient
-                .get()
-                .uri("api/v1/customers/%s".formatted("123456788"))
+                .delete()
+                .uri("api/v1/customers/%s".formatted("123456789"))
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();
     }
-
 
 }
