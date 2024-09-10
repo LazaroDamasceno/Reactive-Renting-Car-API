@@ -28,7 +28,7 @@ public class Car {
     private String vin;
 
     @Field
-    private int plateNumber;
+    private String plateNumber;
 
     @Field
     private String addedAt;
@@ -42,7 +42,7 @@ public class Car {
             String model,
             int productionYear,
             String vin,
-            int plateNumber,
+            String plateNumber,
             String addedAt
     ) {
         this.id = id;
@@ -59,7 +59,7 @@ public class Car {
             String model,
             int productionYear,
             String vin,
-            int plateNumber
+            String plateNumber
     ) {
         this.make = make;
         this.model = model;
