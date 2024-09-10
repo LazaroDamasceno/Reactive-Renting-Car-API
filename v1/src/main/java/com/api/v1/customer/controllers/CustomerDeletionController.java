@@ -1,7 +1,6 @@
 package com.api.v1.customer.controllers;
 
 import com.api.v1.customer.annotations.SSN;
-import com.api.v1.customer.exceptions.CustomerEntityNotExistsException;
 import com.api.v1.customer.services.CustomerDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

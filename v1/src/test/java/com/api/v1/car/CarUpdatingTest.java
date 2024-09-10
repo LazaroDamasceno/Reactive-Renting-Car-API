@@ -73,12 +73,6 @@ class CarUpdatingTest {
     @Order(4)
     @Test
     void testUnsuccessfulCarUpdating3() {
-        var requestDto = new CarUpdatingRequestDto(
-                "GM",
-                "RAM 1000",
-                2024,
-                "1234567"
-        );
         webTestClient
                 .delete()
                 .uri("api/v1/cars/%s".formatted("12345678901234567"))
