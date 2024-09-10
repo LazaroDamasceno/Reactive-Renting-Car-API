@@ -1,5 +1,6 @@
 package com.api.v1.car.domain;
 
+import com.api.v1.car.dtos.CarUpdatingRequestDto;
 import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -59,18 +60,11 @@ public class Car {
         this.addedAt = addedAt;
     }
 
-    public void update(
-            String make,
-            String model,
-            int productionYear,
-            String vin,
-            String plateNumber
-    ) {
-        this.make = make;
-        this.model = model;
-        this.productionYear = productionYear;
-        this.vin = vin;
-        this.plateNumber = plateNumber;
+    public void update(CarUpdatingRequestDto requestDto) {
+        this.make = requestDto.make();
+        this.model = requestDto.model();
+        this.productionYear = requestDto.productionYear();
+        this.plateNumber = requestDto.plateNumber();
         this.updatedAt = ZonedDateTime.now().toString();
     }
 
