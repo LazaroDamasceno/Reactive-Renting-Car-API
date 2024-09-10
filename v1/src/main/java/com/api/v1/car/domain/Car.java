@@ -6,6 +6,8 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.time.ZonedDateTime;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.UUID;
 
 @Getter
@@ -35,6 +37,9 @@ public class Car {
 
     @Field
     private String updatedAt;
+
+    @Field
+    private Set<String> plateNumbers = new HashSet<>();
 
     public Car(
             UUID id,
