@@ -8,20 +8,35 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class AllCarsRetrievingTest {
+class CarRetrievingByVinTest {
 
     @Autowired
     WebTestClient webTestClient;
 
+    String vin = "12345678901234567";
+
     @Test
-    void testIfCarHasElements() {
+    @Order(1)
+    void testSuccessfulCarRetrievingByVin() {
         webTestClient
                 .get()
-                .uri("api/v1/cars")
+                .uri("api/v1/cars/%s".formatted(vin))
                 .exchange()
                 .expectStatus()
                 .is2xxSuccessful();
+    }
+
+    @Test
+    @Order(2)
+    void testUnsuccessfulCarRetrievingByVin() {
+        webTestClient
+                .get()
+                .uri("api/v1/cars/%s".formatted(vin))
+                .exchange()
+                .expectStatus()
+                .is5xxServerError();
     }
 
 }
