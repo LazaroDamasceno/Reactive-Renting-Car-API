@@ -29,6 +29,7 @@ class CarUpdatingServiceImpl implements CarUpdatingService {
                     if (car.getPlateNumbers().contains(requestDto.plateNumber())) {
                         return Mono.error(new DuplicatedPlateNumberException(requestDto.plateNumber()));
                     }
+                    car.getPlateNumbers().add(requestDto.plateNumber());
                     return repository.save(car);
                 }).flatMap(CarResponseMapper::mapToMono);
     }

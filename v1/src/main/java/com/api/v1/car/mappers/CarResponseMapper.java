@@ -21,7 +21,9 @@ public class CarResponseMapper {
                 car.getModel(),
                 car.getProductionYear(),
                 car.getVin(),
-                car.getProductionYear()
+                car.getProductionYear(),
+                car.getAddedAt(),
+                car.getUpdatedAt()
         );
     }
 

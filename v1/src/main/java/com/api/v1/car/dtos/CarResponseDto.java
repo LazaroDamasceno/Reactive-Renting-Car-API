@@ -5,6 +5,8 @@ public record CarResponseDto(
         String model,
         int productionYear,
         String vin,
-        int plateNumber
+        int plateNumber,
+        String addedAt,
+        String updatedAt
 ) {
 }
