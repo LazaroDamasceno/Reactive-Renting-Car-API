@@ -1,6 +1,6 @@
 package com.api.v1.customer.services;
 
-import com.api.v1.EmptyFluxException;
+import com.api.v1.annotations.EmptyFluxException;
 import com.api.v1.customer.annotations.SSN;
 import com.api.v1.customer.domain.CustomerRepository;
 import com.api.v1.customer.dtos.CustomerResponseDto;

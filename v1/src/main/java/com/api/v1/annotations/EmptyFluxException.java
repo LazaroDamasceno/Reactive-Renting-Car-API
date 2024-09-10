@@ -1,4 +1,4 @@
-package com.api.v1;
+package com.api.v1.annotations;
 
 public class EmptyFluxException extends RuntimeException {
 
