@@ -1,5 +1,6 @@
 package com.api.v2
 
+import jakarta.validation.Valid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
@@ -12,7 +13,7 @@ class CustomerRegistrationServiceImpl: CustomerRegistrationService {
     @Autowired
     lateinit var customerRepository: CustomerRepository
 
-    override suspend fun register(requestDto: CustomerRegistrationRequestDto): Mono<CustomerResponseDto> {
+    override suspend fun register(requestDto: @Valid CustomerRegistrationRequestDto): Mono<CustomerResponseDto> {
         val customer = CustomerBuilder.create().fromDto(requestDto).build()
         withContext(Dispatchers.IO) {
             customerRepository
