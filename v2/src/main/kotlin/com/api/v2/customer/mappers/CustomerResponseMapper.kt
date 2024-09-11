@@ -2,13 +2,14 @@ package com.api.v2.customer.mappers
 
 import com.api.v2.customer.domain.Customer
 import com.api.v2.customer.dtos.CustomerResponseDto
+import kotlinx.coroutines.flow.Flow
 
 class CustomerResponseMapper {
 
     companion object {
 
-        fun mapToDto(customer: com.api.v2.customer.domain.Customer): com.api.v2.customer.dtos.CustomerResponseDto {
-            return com.api.v2.customer.dtos.CustomerResponseDto(
+        fun mapToDto(customer: Customer): CustomerResponseDto {
+            return CustomerResponseDto(
                 customer.fullName(),
                 customer.ssn,
                 customer.birthDate,
@@ -18,7 +19,6 @@ class CustomerResponseMapper {
                 customer.createdAt
             )
         }
-
     }
 
 }

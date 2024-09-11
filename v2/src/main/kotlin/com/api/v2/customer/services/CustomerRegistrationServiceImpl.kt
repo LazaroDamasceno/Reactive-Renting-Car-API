@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class CustomerRegistrationServiceImpl: com.api.v2.customer.services.CustomerRegistrationService {
+class CustomerRegistrationServiceImpl: CustomerRegistrationService {
 
     @Autowired
     private lateinit var customerRepository: com.api.v2.customer.domain.CustomerRepository
