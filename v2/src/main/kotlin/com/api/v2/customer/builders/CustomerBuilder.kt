@@ -1,7 +1,7 @@
 package com.api.v2.customer.builders
 
-import com.api.v2.dtos.CustomerRegistrationRequestDto
 import com.api.v2.customer.domain.Customer
+import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
 import java.time.LocalDate
 import java.time.ZonedDateTime
 import java.util.UUID
@@ -37,8 +37,8 @@ class CustomerBuilder {
         return this
     }
 
-    fun build(): com.api.v2.customer.domain.Customer {
-        return com.api.v2.customer.domain.Customer(
+    fun build(): Customer {
+        return Customer(
             id,
             firstName,
             middleName,

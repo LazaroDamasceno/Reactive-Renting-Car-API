@@ -1,8 +1,6 @@
 package com.api.v2.customer.controllers
 
-import com.api.v2.customer.services.CustomerRegistrationService
-import com.api.v2.dtos.CustomerRegistrationRequestDto
-import com.api.v2.customer.dtos.CustomerResponseDto
+import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

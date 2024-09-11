@@ -1,11 +1,7 @@
 package com.api.v2.customer.services
 
-import com.api.v2.builders.CustomerBuilder
-import com.api.v2.customer.domain.CustomerRepository
-import com.api.v2.dtos.CustomerRegistrationRequestDto
-import com.api.v2.customer.dtos.CustomerResponseDto
-import com.api.v2.customer.exceptions.DuplicatedSsnException
-import com.api.v2.customer.mappers.CustomerResponseMapper
+import com.api.v2.customer.builders.CustomerBuilder
+import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
 import jakarta.validation.Valid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*

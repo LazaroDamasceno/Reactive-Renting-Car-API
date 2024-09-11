@@ -1,10 +1,6 @@
 package com.api.v2.customer.services
 
-import com.api.v2.customer.domain.CustomerRepository
-import com.api.v2.customer.dtos.CustomerResponseDto
-import com.api.v2.dtos.CustomerUpdateRequestDto
-import com.api.v2.customer.mappers.CustomerResponseMapper
-import com.api.v2.customer.utils.CustomerFinderUtil
+import com.api.v2.customer.dtos.CustomerUpdateRequestDto
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
