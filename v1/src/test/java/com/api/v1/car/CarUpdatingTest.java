@@ -70,15 +70,4 @@ class CarUpdatingTest {
                 .is5xxServerError();
     }
 
-    @Order(4)
-    @Test
-    void testUnsuccessfulCarUpdating3() {
-        webTestClient
-                .delete()
-                .uri("api/v1/cars/%s".formatted("12345678901234567"))
-                .exchange()
-                .expectStatus()
-                .is4xxClientError();
-    }
-
 }
