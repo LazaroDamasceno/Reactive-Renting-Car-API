@@ -3,6 +3,7 @@ package com.api.v2
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDate
+import java.time.ZonedDateTime
 import java.util.UUID
 
 @Document(collection = "v1_customers")
@@ -37,6 +38,7 @@ class Customer(
         email = requestDto.email
         phoneNumber = requestDto.phoneNumber
         gender = requestDto.gender
+        updatedAt = ZonedDateTime.now().toString()
     }
 
 }
