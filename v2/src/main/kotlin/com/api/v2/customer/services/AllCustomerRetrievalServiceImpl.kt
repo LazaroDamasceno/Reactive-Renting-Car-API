@@ -14,7 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class AllCustomerRetrieveServiceImpl: AllCustomerRetrieveService {
+class AllCustomerRetrievalServiceImpl: AllCustomerRetrievalService {
 
     @Autowired
     private lateinit var customerFinderUtil: CustomerFinderUtil

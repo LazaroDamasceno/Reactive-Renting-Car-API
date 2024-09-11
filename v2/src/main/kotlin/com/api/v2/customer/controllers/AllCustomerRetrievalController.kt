@@ -1,7 +1,7 @@
 package com.api.v2.customer.controllers
 
 import com.api.v2.customer.dtos.CustomerResponseDto
-import com.api.v2.customer.services.AllCustomerRetrieveService
+import com.api.v2.customer.services.AllCustomerRetrievalService
 import kotlinx.coroutines.flow.Flow
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController
 
 @RestController
 @RequestMapping("api/v1/customers")
-class AllCustomerRetrieveController {
+class AllCustomerRetrievalController {
 
     @Autowired
-    private lateinit var service: AllCustomerRetrieveService
+    private lateinit var service: AllCustomerRetrievalService
 
     @GetMapping("{ssn}")
     @ResponseStatus(value = HttpStatus.OK)
