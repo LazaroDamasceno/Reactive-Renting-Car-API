@@ -24,7 +24,7 @@ class CustomerBuilder {
         }
     }
 
-    fun fromDto(@Valid requestDto: CustomerRegistrationRequestDto) {
+    fun fromDto(@Valid requestDto: CustomerRegistrationRequestDto): CustomerBuilder {
         this.firstName = requestDto.firstName
         this.middleName = requestDto.middleName
         this.lastName = requestDto.lastName
@@ -33,6 +33,7 @@ class CustomerBuilder {
         this.email = requestDto.email
         this.address = requestDto.address
         this.phoneNumber = requestDto.phoneNumber
+        return this
     }
 
     fun build(): Customer {
