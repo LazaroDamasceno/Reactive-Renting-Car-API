@@ -1,4 +1,4 @@
-package com.api.v2
+package com.api.v2.customer
 
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order

@@ -1,4 +1,4 @@
-package com.api.v2
+package com.api.v2.customer
 
 import com.api.v2.customer.dtos.CustomerUpdateRequestDto
 import org.junit.jupiter.api.MethodOrderer
