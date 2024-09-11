@@ -18,7 +18,7 @@ class Customer {
     var address: String
     var phoneNumber: String
     val createdAt: String
-    lateinit var updatedAt: String
+    var updatedAt: String? = null
 
     constructor(
         id: UUID,
