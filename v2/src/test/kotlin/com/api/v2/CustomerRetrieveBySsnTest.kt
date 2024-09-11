@@ -10,7 +10,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class CustomerRetrieveTest {
+class CustomerRetrieveBySsnTest {
 
     @Autowired
     private lateinit var webTestClient: WebTestClient
