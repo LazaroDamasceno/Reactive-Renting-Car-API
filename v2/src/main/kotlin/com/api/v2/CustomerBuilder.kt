@@ -7,7 +7,7 @@ import java.util.*
 
 class CustomerBuilder {
 
-    private val id = UUID.randomUUID();
+    private val id = UUID.randomUUID()
     private lateinit var firstName: String
     private lateinit var middleName: String
     private lateinit var lastName: String
