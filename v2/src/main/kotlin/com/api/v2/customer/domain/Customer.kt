@@ -1,5 +1,6 @@
-package com.api.v2
+package com.api.v2.customer.domain
 
+import com.api.v2.dtos.CustomerUpdateRequestDto
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDate
