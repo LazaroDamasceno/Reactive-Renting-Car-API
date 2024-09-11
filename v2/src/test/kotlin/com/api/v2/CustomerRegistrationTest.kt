@@ -15,7 +15,7 @@ import java.time.LocalDate
 class CustomerRegistrationTest {
 
 	@Autowired
-	lateinit var webTestClient: WebTestClient
+	private lateinit var webTestClient: WebTestClient
 
 	val requestDto = CustomerRegistrationRequestDto(
 		"Leo",
