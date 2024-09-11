@@ -29,4 +29,14 @@ class Customer(
         return "$firstName $middleName $lastName"
     }
 
+    fun update(requestDto: CustomerUpdateRequestDto) {
+        firstName = requestDto.firstName
+        middleName = requestDto.middleName
+        lastName = requestDto.lastName
+        birthDate = requestDto.birthDate
+        email = requestDto.email
+        phoneNumber = requestDto.phoneNumber
+        gender = requestDto.gender
+    }
+
 }
