@@ -1,10 +1,16 @@
 package com.api.v2
 
+import reactor.core.publisher.Mono
+
 class CustomerResponseMapper {
 
     companion object {
 
-        fun mapToDto(customer: Customer): CustomerResponseDto {
+        fun mapToMono(customer: Customer): Mono<CustomerResponseDto> {
+            return Mono.just(mapToDto(customer))
+        }
+
+        private fun mapToDto(customer: Customer): CustomerResponseDto {
             return CustomerResponseDto(
                 customer.fullName(),
                 customer.ssn,
