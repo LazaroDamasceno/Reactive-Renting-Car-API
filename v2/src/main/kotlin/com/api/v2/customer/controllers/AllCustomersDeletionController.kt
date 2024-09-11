@@ -22,7 +22,7 @@ class AllCustomersDeletionController {
         return service.deleteBySsn(ssn)
     }
 
-    @DeleteMapping("{ssn}")
+    @DeleteMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     suspend fun deleteAll() {
         return service.deleteAll();
