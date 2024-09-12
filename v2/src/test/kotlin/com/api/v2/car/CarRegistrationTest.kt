@@ -14,7 +14,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 private class CarRegistrationTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
     private val requestDto = CarRegistrationRequestDto(
         "12345678901234567",

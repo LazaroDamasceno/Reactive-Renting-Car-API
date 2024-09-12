@@ -11,6 +11,6 @@ import org.springframework.test.web.reactive.server.WebTestClient
 private class CarRetrievalByVinTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
 }

@@ -10,13 +10,13 @@ import org.springframework.test.web.reactive.server.WebTestClient
 private class AllCustomersRetrievalTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
     @Test
     fun testIfCustomerIsNotEmpty() {
         webTestClient
             .get()
-            .uri("api/v1/customers/${123456789}")
+            .uri("api/v2/customers/${123456789}")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()

@@ -15,7 +15,7 @@ import java.time.LocalDate
 private class CustomerRegistrationTest {
 
 	@Autowired
-	private lateinit var webTestClient: WebTestClient
+	lateinit var webTestClient: WebTestClient
 
 	val requestDto = CustomerRegistrationRequestDto(
 		"Leo",
@@ -33,7 +33,7 @@ private class CustomerRegistrationTest {
 	fun testSuccessfulCustomerRegistration() {
 		webTestClient
 			.post()
-			.uri("api/v1/customers")
+			.uri("api/v2/customers")
 			.bodyValue(requestDto)
 			.exchange()
 			.expectStatus()
@@ -45,7 +45,7 @@ private class CustomerRegistrationTest {
 	fun testUnsuccessfulCustomerRegistration() {
 		webTestClient
 			.post()
-			.uri("api/v1/customers")
+			.uri("api/v2/customers")
 			.bodyValue(requestDto)
 			.exchange()
 			.expectStatus()

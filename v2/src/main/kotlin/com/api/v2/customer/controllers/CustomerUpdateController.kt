@@ -9,7 +9,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("api/v1/customers")
+@RequestMapping("api/v2/customers")
 class CustomerUpdateController {
 
     @Autowired

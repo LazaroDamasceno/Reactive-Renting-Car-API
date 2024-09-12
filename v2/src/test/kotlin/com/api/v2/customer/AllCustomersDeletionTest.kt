@@ -13,14 +13,14 @@ import org.springframework.test.web.reactive.server.WebTestClient
 private class AllCustomersDeletionTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
     @Test
     @Order(1)
     fun testSuccessfulAllCustomersDeletion() {
         webTestClient
             .delete()
-            .uri("api/v1/customers")
+            .uri("api/v2/customers")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -31,7 +31,7 @@ private class AllCustomersDeletionTest {
     fun testUnsuccessfulAllCustomersDeletion() {
         webTestClient
             .delete()
-            .uri("api/v1/customers")
+            .uri("api/v2/customers")
             .exchange()
             .expectStatus()
             .is5xxServerError()

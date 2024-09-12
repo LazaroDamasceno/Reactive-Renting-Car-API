@@ -15,7 +15,7 @@ import java.time.LocalDate
 private class CustomerUpdateTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
     private val requestDto = CustomerUpdateRequestDto(
         "Leo",
@@ -33,7 +33,7 @@ private class CustomerUpdateTest {
         val ssn = "123456789"
         webTestClient
             .put()
-            .uri("api/v1/customers/$ssn")
+            .uri("api/v2/customers/$ssn")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
@@ -46,7 +46,7 @@ private class CustomerUpdateTest {
         val ssn = "123456788"
         webTestClient
             .put()
-            .uri("api/v1/customers/$ssn")
+            .uri("api/v2/customers/$ssn")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()

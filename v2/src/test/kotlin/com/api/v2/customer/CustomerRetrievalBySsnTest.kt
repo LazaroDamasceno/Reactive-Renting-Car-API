@@ -13,14 +13,14 @@ import org.springframework.test.web.reactive.server.WebTestClient
 private class CustomerRetrievalBySsnTest {
 
     @Autowired
-    private lateinit var webTestClient: WebTestClient
+    lateinit var webTestClient: WebTestClient
 
     @Test
     @Order(1)
     fun testSuccessfulCustomerRetrieveBySsn() {
         webTestClient
             .get()
-            .uri("api/v1/customers/${123456789}")
+            .uri("api/v2/customers/${123456789}")
             .exchange()
             .expectStatus()
             .is2xxSuccessful
@@ -31,7 +31,7 @@ private class CustomerRetrievalBySsnTest {
     fun testUnsuccessfulCustomerRetrieveBySsn() {
         webTestClient
             .get()
-            .uri("api/v1/customers/${123456789}")
+            .uri("api/v2/customers/${123456789}")
             .exchange()
             .expectStatus()
             .is5xxServerError
