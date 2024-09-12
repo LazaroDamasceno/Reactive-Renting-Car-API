@@ -10,8 +10,7 @@ class CarResponseMapper {
                 car.productionYear,
                 car.make,
                 car.plateNumber,
-                car.createdAt,
-                car.updateAt
+                car.createdAt
             )
         }
     }
