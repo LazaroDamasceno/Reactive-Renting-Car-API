@@ -14,7 +14,7 @@ class CreditCardController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    suspend fun register(@RequestBody creditCard: @Valid CreditCard): CreditCard {
+    suspend fun register(@RequestBody creditCard: @Valid CreditCard): CreditCardResponseDTO {
         return service.register(creditCard)
     }
 
