@@ -18,7 +18,7 @@ class Car(
     val createdAt: String,
 ) {
 
-    lateinit var updatedAt: String
+    var updatedAt: String? = null
 
     fun update(requestDto: CarUpdateRequestDto) {
         model = requestDto.model

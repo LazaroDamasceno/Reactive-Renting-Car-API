@@ -16,7 +16,8 @@ class CustomerResponseMapper {
                 customer.email,
                 customer.phoneNumber,
                 customer.gender,
-                customer.createdAt
+                customer.createdAt,
+                customer.updatedAt
             )
         }
     }

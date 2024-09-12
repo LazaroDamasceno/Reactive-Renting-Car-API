@@ -1,6 +1,9 @@
 package com.api.v2.customer.services
 
+import com.api.v2.customer.domain.CustomerRepository
 import com.api.v2.customer.dtos.CustomerUpdateRequestDto
+import com.api.v2.customer.mappers.CustomerResponseMapper
+import com.api.v2.customer.utils.CustomerFinderUtil
 import jakarta.validation.Valid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
@@ -11,10 +14,10 @@ import org.springframework.stereotype.Service
 private class CustomerUpdateServiceImpl: CustomerUpdateService {
 
     @Autowired
-    private lateinit var customerRepository: com.api.v2.customer.domain.CustomerRepository
+    private lateinit var customerRepository: CustomerRepository
 
     @Autowired
-    private lateinit var customerFinderUtil: com.api.v2.customer.utils.CustomerFinderUtil
+    private lateinit var customerFinderUtil: CustomerFinderUtil
 
     override suspend fun update(
         ssn: String,
@@ -24,7 +27,7 @@ private class CustomerUpdateServiceImpl: CustomerUpdateService {
             val customer = customerFinderUtil.find(ssn)
             customer.update(requestDto)
             val savedCustomer = customerRepository.save(customer)
-            com.api.v2.customer.mappers.CustomerResponseMapper.mapToDto(savedCustomer)
+            CustomerResponseMapper.mapToDto(savedCustomer)
         }
     }
 

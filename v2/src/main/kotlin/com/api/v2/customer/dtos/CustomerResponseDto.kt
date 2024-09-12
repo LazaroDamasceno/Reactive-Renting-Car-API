@@ -9,5 +9,6 @@ data class CustomerResponseDto(
     var email: String,
     var phoneNumber: String,
     var gender: String,
-    var createdAt: String
+    var createdAt: String,
+    var updatedAt: String?
 )
