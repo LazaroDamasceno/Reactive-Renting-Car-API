@@ -1,6 +1,7 @@
 package com.api.v2.car.services
 
 import com.api.v2.car.domain.CarRepository
+import com.api.v2.car.dtos.CarResponseDto
 import com.api.v2.car.dtos.CarUpdateRequestDto
 import com.api.v2.car.mappers.CarResponseMapper
 import com.api.v2.car.utils.CarFinderUtil
@@ -19,7 +20,7 @@ private class CarUpdateServiceImpl: CarUpdateService {
     @Autowired
     private lateinit var carRepository: CarRepository
 
-    override suspend fun update(vin: String, requestDto: @Valid CarUpdateRequestDto) {
+    override suspend fun update(vin: String, requestDto: @Valid CarUpdateRequestDto): CarResponseDto {
         return withContext(Dispatchers.IO) {
             val existingCar = carFinderUtil.find(vin)
             existingCar.update(requestDto)
