@@ -43,7 +43,7 @@ public class Rent {
         this.customer = customer;
         this.payment = payment;
         this.rentedAt = createdAt;
-        this.dueDate = dueDate
+        this.dueDate = dueDate;
     }
 
 }
