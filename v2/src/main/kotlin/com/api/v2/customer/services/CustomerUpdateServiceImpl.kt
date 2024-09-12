@@ -1,6 +1,7 @@
 package com.api.v2.customer.services
 
 import com.api.v2.customer.domain.CustomerRepository
+import com.api.v2.customer.dtos.CustomerResponseDto
 import com.api.v2.customer.dtos.CustomerUpdateRequestDto
 import com.api.v2.customer.mappers.CustomerResponseMapper
 import com.api.v2.customer.utils.CustomerFinderUtil
@@ -22,7 +23,7 @@ private class CustomerUpdateServiceImpl: CustomerUpdateService {
     override suspend fun update(
         ssn: String,
         requestDto: @Valid CustomerUpdateRequestDto
-    ): com.api.v2.customer.dtos.CustomerResponseDto {
+    ): CustomerResponseDto {
         return withContext(Dispatchers.IO) {
             val customer = customerFinderUtil.find(ssn)
             customer.update(requestDto)

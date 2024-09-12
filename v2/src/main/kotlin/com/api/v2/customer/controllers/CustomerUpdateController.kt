@@ -1,5 +1,6 @@
 package com.api.v2.customer.controllers
 
+import com.api.v2.customer.dtos.CustomerResponseDto
 import com.api.v2.customer.dtos.CustomerUpdateRequestDto
 import com.api.v2.customer.services.CustomerUpdateService
 import jakarta.validation.Valid
@@ -19,7 +20,7 @@ class CustomerUpdateController {
     suspend fun update(
         @PathVariable ssn: String,
         @RequestBody requestDto: @Valid CustomerUpdateRequestDto
-    ): com.api.v2.customer.dtos.CustomerResponseDto {
+    ): CustomerResponseDto {
         return service.update(ssn, requestDto)
     }
 

@@ -1,6 +1,8 @@
 package com.api.v2.customer.controllers
 
 import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
+import com.api.v2.customer.dtos.CustomerResponseDto
+import com.api.v2.customer.services.CustomerRegistrationService
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -15,11 +17,11 @@ import org.springframework.web.bind.annotation.RestController
 class CustomerRegistrationController {
 
     @Autowired
-    private lateinit var service: com.api.v2.customer.services.CustomerRegistrationService
+    private lateinit var service: CustomerRegistrationService
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    suspend fun register(@RequestBody requestDto: @Valid CustomerRegistrationRequestDto): com.api.v2.customer.dtos.CustomerResponseDto {
+    suspend fun register(@RequestBody requestDto: @Valid CustomerRegistrationRequestDto): CustomerResponseDto {
         return service.register(requestDto)
     }
 
