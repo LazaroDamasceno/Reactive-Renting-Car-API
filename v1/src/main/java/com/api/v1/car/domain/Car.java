@@ -16,7 +16,7 @@ import java.util.UUID;
 public class Car {
 
     @Id
-    private UUID id;
+    private final UUID id;
 
     @Field
     private String make;
@@ -28,13 +28,13 @@ public class Car {
     private int productionYear;
 
     @Field
-    private String vin;
+    private final String vin;
 
     @Field
     private String plateNumber;
 
     @Field
-    private String addedAt;
+    private final String addedAt;
 
     @Field
     private String updatedAt;
