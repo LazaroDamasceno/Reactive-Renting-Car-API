@@ -2,6 +2,7 @@ package com.api.v2.creditcard
 
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDate
+import java.time.ZonedDateTime
 
 @Document(collection = "v1_credit_cards")
 data class CreditCard(
@@ -11,4 +12,21 @@ data class CreditCard(
     val cvc: String,
     val dueDate: LocalDate,
     val addedAt: String
-)
+) {
+
+    constructor(
+        ownerName: String,
+        cardNumber: String,
+        flag: String,
+        cvc: String,
+        dueDate: LocalDate
+    ) : this(
+        ownerName,
+        cardNumber,
+        flag,
+        cvc,
+        dueDate,
+        ZonedDateTime.now().toString()
+    )
+
+}

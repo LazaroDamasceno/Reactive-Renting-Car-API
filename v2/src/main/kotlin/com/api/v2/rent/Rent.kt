@@ -18,7 +18,6 @@ class Rent(
     val payment: Payment,
     val rentedAt: String,
     val dueDate: String
-
 ) {
 
     var returnedAt: String? = null
