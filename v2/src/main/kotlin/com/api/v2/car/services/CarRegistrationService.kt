@@ -1,6 +1,6 @@
 package com.api.v2.car.services
 
-import com.api.v2.car.dto.CarRegistrationRequestDto
+import com.api.v2.car.dtos.CarRegistrationRequestDto
 
 interface CarRegistrationService {
 

@@ -1,4 +1,4 @@
-package com.api.v2.car.dto
+package com.api.v2.car.dtos
 
 data class CarResponseDto(
     val vin: String,
@@ -6,5 +6,6 @@ data class CarResponseDto(
     val productionYear: String,
     val make: String,
     val plateNumber: String,
-    val createdAt: String
+    val createdAt: String,
+    val updatedAt: String
 )

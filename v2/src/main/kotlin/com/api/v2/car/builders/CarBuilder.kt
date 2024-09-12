@@ -1,7 +1,7 @@
 package com.api.v2.car.builders
 
 import com.api.v2.car.domain.Car
-import com.api.v2.car.dto.CarRegistrationRequestDto
+import com.api.v2.car.dtos.CarRegistrationRequestDto
 import java.time.ZonedDateTime
 import java.util.*
 

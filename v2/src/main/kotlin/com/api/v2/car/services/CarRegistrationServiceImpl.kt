@@ -2,7 +2,7 @@ package com.api.v2.car.services
 
 import com.api.v2.car.builders.CarBuilder
 import com.api.v2.car.domain.CarRepository
-import com.api.v2.car.dto.CarRegistrationRequestDto
+import com.api.v2.car.dtos.CarRegistrationRequestDto
 import com.api.v2.car.exceptions.DuplicatedVinException
 import com.api.v2.car.mappers.CarResponseMapper
 import jakarta.validation.Valid

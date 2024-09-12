@@ -1,4 +1,4 @@
-package com.api.v2.car.dto
+package com.api.v2.car.dtos
 
 data class CarRegistrationRequestDto(
     val vin: String,
