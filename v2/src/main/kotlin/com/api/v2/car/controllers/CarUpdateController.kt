@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("api/v1/cars")
-private class CarUpdateController {
+class CarUpdateController {
 
     @Autowired
     private lateinit var service: CarUpdateService
