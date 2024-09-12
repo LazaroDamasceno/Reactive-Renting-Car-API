@@ -1,5 +1,7 @@
-package com.api.v2.car
+package com.api.v2.car.controllers
 
+import com.api.v2.car.services.CarRegistrationService
+import com.api.v2.car.dto.CarRegistrationRequestDto
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus

@@ -1,5 +1,6 @@
 package com.api.v2.car
 
+import com.api.v2.car.dto.CarRegistrationRequestDto
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test

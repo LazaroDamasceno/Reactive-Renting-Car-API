@@ -1,4 +1,7 @@
-package com.api.v2.car
+package com.api.v2.car.mappers
+
+import com.api.v2.car.domain.Car
+import com.api.v2.car.dto.CarResponseDto
 
 class CarResponseMapper {
 
