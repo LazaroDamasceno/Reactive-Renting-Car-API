@@ -24,8 +24,8 @@ private class CarUpdateServiceImpl: CarUpdateService {
         return withContext(Dispatchers.IO) {
             val existingCar = carFinderUtil.find(vin)
             existingCar.update(requestDto)
-            carRepository.save(existingCar)
-            CarResponseMapper.mapToDto(existingCar)
+            val savedCar = carRepository.save(existingCar)
+            CarResponseMapper.mapToDto(savedCar)
         }
     }
 
