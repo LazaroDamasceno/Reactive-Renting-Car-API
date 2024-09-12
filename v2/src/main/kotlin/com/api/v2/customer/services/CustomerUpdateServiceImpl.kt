@@ -1,6 +1,7 @@
 package com.api.v2.customer.services
 
 import com.api.v2.customer.dtos.CustomerUpdateRequestDto
+import jakarta.validation.Valid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
@@ -16,7 +17,8 @@ private class CustomerUpdateServiceImpl: CustomerUpdateService {
     private lateinit var customerFinderUtil: com.api.v2.customer.utils.CustomerFinderUtil
 
     override suspend fun update(
-        ssn: String, requestDto: CustomerUpdateRequestDto
+        ssn: String,
+        requestDto: @Valid CustomerUpdateRequestDto
     ): com.api.v2.customer.dtos.CustomerResponseDto {
         return withContext(Dispatchers.IO) {
             val customer = customerFinderUtil.find(ssn)
