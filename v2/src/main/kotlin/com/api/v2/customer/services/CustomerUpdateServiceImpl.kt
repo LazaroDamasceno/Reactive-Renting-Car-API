@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class CustomerUpdateServiceImpl: CustomerUpdateService {
+private class CustomerUpdateServiceImpl: CustomerUpdateService {
 
     @Autowired
     private lateinit var customerRepository: com.api.v2.customer.domain.CustomerRepository

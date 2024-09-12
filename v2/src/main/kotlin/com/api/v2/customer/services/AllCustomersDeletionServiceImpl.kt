@@ -5,13 +5,12 @@ import com.api.v2.customer.exceptions.EmptyCustomerEntityException
 import com.api.v2.customer.utils.CustomerFinderUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.count
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 @Service
-class AllCustomersDeletionServiceImpl: AllCustomersDeletionService {
+private class AllCustomersDeletionServiceImpl: AllCustomersDeletionService {
 
     @Autowired
     private lateinit var customerRepository: CustomerRepository
