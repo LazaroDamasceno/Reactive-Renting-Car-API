@@ -14,7 +14,7 @@ private class CreditCardRegistrationServiceImpl: CreditCardRegistrationService {
     @Autowired
     lateinit var creditCardRepository: CreditCardRepository
 
-    override suspend fun register(creditCard: @Valid CreditCard): CreditCard {
+    override suspend fun register(creditCard: @Valid CreditCard): CreditCardResponseDTO {
         return withContext(Dispatchers.IO) {
             val isThereADuplicatedCardNumber = creditCardRepository
                 .findAll()
@@ -23,7 +23,8 @@ private class CreditCardRegistrationServiceImpl: CreditCardRegistrationService {
             if (isThereADuplicatedCardNumber) {
                 throw DuplicatedCardNumberException(creditCard.cardNumber)
             }
-            creditCardRepository.save(creditCard)
+            val savedCredit = creditCardRepository.save(creditCard)
+            CreditCardResponseMapper.map(savedCredit)
         }
     }
 
