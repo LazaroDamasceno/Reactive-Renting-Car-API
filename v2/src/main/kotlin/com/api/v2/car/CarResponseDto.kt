@@ -6,6 +6,5 @@ data class CarResponseDto(
     val productionYear: String,
     val make: String,
     val plateNumber: String,
-    val createdAt: String,
-    val updatedAt: String
+    val createdAt: String
 )

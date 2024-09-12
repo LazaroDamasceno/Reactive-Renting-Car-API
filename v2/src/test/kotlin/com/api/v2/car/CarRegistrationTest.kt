@@ -15,13 +15,21 @@ class CarRegistrationTest {
     @Autowired
     private lateinit var webTestClient: WebTestClient
 
+    private val requestDto = CarRegistrationRequestDto(
+        "12345678901234567",
+        "RAM",
+        "2024",
+        "GM",
+        "1234567"
+    )
+
     @Test
     @Order(1)
     fun testSuccessfulCarRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/customers")
-            //.bodyValue()
+            .uri("api/v1/cars")
+            .bodyValue(requestDto)
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -32,8 +40,8 @@ class CarRegistrationTest {
     fun testUnsuccessfulCarRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/customers")
-            //.bodyValue()
+            .uri("api/v1/cars")
+            .bodyValue(requestDto)
             .exchange()
             .expectStatus()
             .is5xxServerError()

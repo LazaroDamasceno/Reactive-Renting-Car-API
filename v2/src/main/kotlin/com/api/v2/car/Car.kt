@@ -15,10 +15,4 @@ class Car(
     var plateNumber: String,
     val createdAt: String,
 
-) {
-
-    lateinit var updateAt: String
-
-    var plateNumbersUsed: Set<String> = mutableSetOf()
-
-}
+)
