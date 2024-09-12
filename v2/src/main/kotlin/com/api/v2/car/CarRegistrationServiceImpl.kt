@@ -1,5 +1,6 @@
 package com.api.v2.car
 
+import jakarta.validation.Valid
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.flow.filter
@@ -14,7 +15,7 @@ private class CarRegistrationServiceImpl: CarRegistrationService {
     @Autowired
     private lateinit var carRepository: CarRepository
 
-    override suspend fun register(requestDto: CarRegistrationRequestDto) {
+    override suspend fun register(requestDto: @Valid CarRegistrationRequestDto) {
         return withContext(Dispatchers.IO) {
             if (checkTheExistenceOfDuplicatedVin(requestDto.vin)) {
                 throw DuplicatedVinException(requestDto.vin)
