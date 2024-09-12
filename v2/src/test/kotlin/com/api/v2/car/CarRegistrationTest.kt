@@ -29,7 +29,7 @@ private class CarRegistrationTest {
     fun testSuccessfulCarRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/cars")
+            .uri("api/v2/cars")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
@@ -41,7 +41,7 @@ private class CarRegistrationTest {
     fun testUnsuccessfulCarRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/cars")
+            .uri("api/v2/cars")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
