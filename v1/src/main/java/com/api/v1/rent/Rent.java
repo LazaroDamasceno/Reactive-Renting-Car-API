@@ -33,6 +33,7 @@ public class Rent {
     @Field
     private final String dueDate;
 
+    @Field
     private String returningDate;
 
     public Rent(
