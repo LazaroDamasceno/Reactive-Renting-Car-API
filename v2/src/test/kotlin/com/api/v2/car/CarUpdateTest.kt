@@ -29,7 +29,7 @@ private class CarUpdateTest {
         val vin = "12345678901234567"
         webTestClient
             .put()
-            .uri("api/v1/cars/${vin}")
+            .uri("api/v2/cars/${vin}")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
@@ -42,7 +42,7 @@ private class CarUpdateTest {
         val vin = "12345678901234566"
         webTestClient
             .put()
-            .uri("api/v1/cars/${vin}")
+            .uri("api/v2/cars/${vin}")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
