@@ -30,9 +30,10 @@ private class CustomerUpdateTest {
     @Test
     @Order(1)
     fun testSuccessfulCustomerUpdate() {
+        val ssn = "123456789"
         webTestClient
             .put()
-            .uri("api/v1/customers/${123456789}")
+            .uri("api/v1/customers/$ssn")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
@@ -42,9 +43,10 @@ private class CustomerUpdateTest {
     @Test
     @Order(2)
     fun testUnsuccessfulCustomerUpdate() {
+        val ssn = "123456788"
         webTestClient
             .put()
-            .uri("api/v1/customers/${123456788}")
+            .uri("api/v1/customers/$ssn")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
