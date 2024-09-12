@@ -7,6 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
 @Document(collection = "v1_rents")
@@ -30,6 +31,8 @@ public class Rent {
     @Field
     private final String dueDate;
 
+    private String returningDate;
+
     public Rent(
             UUID id,
             Car car,
@@ -44,6 +47,10 @@ public class Rent {
         this.payment = payment;
         this.rentedAt = createdAt;
         this.dueDate = dueDate;
+    }
+
+    public void markAsFinished() {
+        this.returningDate = ZonedDateTime.now().toString();
     }
 
 }
