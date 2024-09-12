@@ -7,7 +7,7 @@ import java.time.LocalDate
 import java.time.ZonedDateTime
 import java.util.UUID
 
-@Document(collection = "v1_customers")
+@Document(collection = "v2_customers")
 class Customer(
     @Id
     val id: UUID,

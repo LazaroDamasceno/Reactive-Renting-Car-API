@@ -20,10 +20,7 @@ private class CustomerUpdateServiceImpl: CustomerUpdateService {
     @Autowired
     private lateinit var customerFinderUtil: CustomerFinderUtil
 
-    override suspend fun update(
-        ssn: String,
-        requestDto: @Valid CustomerUpdateRequestDto
-    ): CustomerResponseDto {
+    override suspend fun update(ssn: String, requestDto: @Valid CustomerUpdateRequestDto): CustomerResponseDto {
         return withContext(Dispatchers.IO) {
             val customer = customerFinderUtil.find(ssn)
             customer.update(requestDto)

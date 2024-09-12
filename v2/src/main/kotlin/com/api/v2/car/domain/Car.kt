@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document
 import java.time.ZonedDateTime
 import java.util.UUID
 
-@Document(collection = "v1_cars")
+@Document(collection = "v2_cars")
 class Car(
     @Id
     val id: UUID,
