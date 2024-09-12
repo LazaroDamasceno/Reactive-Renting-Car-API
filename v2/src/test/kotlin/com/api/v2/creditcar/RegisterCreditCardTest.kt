@@ -1,6 +1,6 @@
 package com.api.v2.creditcar
 
-import com.api.v2.creditcard.CreditCard
+import com.api.v2.creditcard.domain.CreditCard
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test

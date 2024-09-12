@@ -1,8 +1,8 @@
-package com.api.v2.creditcard
+package com.api.v2.creditcard.dtos
 
 import java.time.LocalDate
 
-data class CreditCardResponseDTO(
+data class CreditCardResponseDto(
     val ownerName: String,
     val cardNumber: String,
     val flag: String,

@@ -1,4 +1,4 @@
-package com.api.v2.creditcard
+package com.api.v2.creditcard.domain
 
 import org.bson.types.ObjectId
 import org.springframework.data.repository.kotlin.CoroutineCrudRepository

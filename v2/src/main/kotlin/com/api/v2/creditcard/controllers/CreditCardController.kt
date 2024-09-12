@@ -1,5 +1,8 @@
-package com.api.v2.creditcard
+package com.api.v2.creditcard.controllers
 
+import com.api.v2.creditcard.services.CreditCardRegistrationService
+import com.api.v2.creditcard.domain.CreditCard
+import com.api.v2.creditcard.dtos.CreditCardResponseDto
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -14,7 +17,7 @@ class CreditCardController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    suspend fun register(@RequestBody creditCard: @Valid CreditCard): CreditCardResponseDTO {
+    suspend fun register(@RequestBody creditCard: @Valid CreditCard): CreditCardResponseDto {
         return service.register(creditCard)
     }
 

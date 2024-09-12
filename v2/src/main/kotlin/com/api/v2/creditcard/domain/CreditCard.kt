@@ -1,4 +1,4 @@
-package com.api.v2.creditcard
+package com.api.v2.creditcard.domain
 
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDate
