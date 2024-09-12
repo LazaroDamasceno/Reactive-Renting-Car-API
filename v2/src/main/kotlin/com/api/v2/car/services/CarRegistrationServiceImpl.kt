@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service
 private class CarRegistrationServiceImpl: CarRegistrationService {
 
     @Autowired
-    private lateinit var carRepository: CarRepository
+    lateinit var carRepository: CarRepository
 
     override suspend fun register(requestDto: @Valid CarRegistrationRequestDto) {
         return withContext(Dispatchers.IO) {

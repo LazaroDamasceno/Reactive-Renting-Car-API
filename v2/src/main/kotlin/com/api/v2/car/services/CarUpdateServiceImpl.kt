@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service
 private class CarUpdateServiceImpl: CarUpdateService {
 
     @Autowired
-    private lateinit var carFinderUtil: CarFinderUtil
+    lateinit var carFinderUtil: CarFinderUtil
 
     @Autowired
-    private lateinit var carRepository: CarRepository
+    lateinit var carRepository: CarRepository
 
     override suspend fun update(vin: String, requestDto: @Valid CarUpdateRequestDto): CarResponseDto {
         return withContext(Dispatchers.IO) {

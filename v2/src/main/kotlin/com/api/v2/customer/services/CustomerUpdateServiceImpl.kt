@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service
 private class CustomerUpdateServiceImpl: CustomerUpdateService {
 
     @Autowired
-    private lateinit var customerRepository: CustomerRepository
+    lateinit var customerRepository: CustomerRepository
 
     @Autowired
-    private lateinit var customerFinderUtil: CustomerFinderUtil
+    lateinit var customerFinderUtil: CustomerFinderUtil
 
     override suspend fun update(ssn: String, requestDto: @Valid CustomerUpdateRequestDto): CustomerResponseDto {
         return withContext(Dispatchers.IO) {

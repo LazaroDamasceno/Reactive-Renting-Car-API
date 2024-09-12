@@ -13,10 +13,10 @@ import org.springframework.stereotype.Service
 private class AllCustomersDeletionServiceImpl: AllCustomersDeletionService {
 
     @Autowired
-    private lateinit var customerRepository: CustomerRepository
+    lateinit var customerRepository: CustomerRepository
 
     @Autowired
-    private lateinit var customerFinderUtil: CustomerFinderUtil
+    lateinit var customerFinderUtil: CustomerFinderUtil
 
     override suspend fun deleteBySsn(ssn: String) {
         withContext(Dispatchers.IO) {
@@ -35,7 +35,7 @@ private class AllCustomersDeletionServiceImpl: AllCustomersDeletionService {
     }
 
     private suspend fun checkIfCustomerEntityIsEmpty(): Boolean {
-        return customerRepository.findAll().count() == 0
+        return customerRepository.count() == 0L
     }
 
 }

@@ -17,10 +17,10 @@ import org.springframework.stereotype.Service
 private class AllCustomersRetrievalServiceImpl: AllCustomersRetrievalService {
 
     @Autowired
-    private lateinit var customerFinderUtil: CustomerFinderUtil
+    lateinit var customerFinderUtil: CustomerFinderUtil
 
     @Autowired
-    private lateinit var customerRepository: CustomerRepository
+    lateinit var customerRepository: CustomerRepository
 
     override suspend fun findBySsn(ssn: String): CustomerResponseDto {
         return withContext(Dispatchers.IO) {
@@ -38,8 +38,8 @@ private class AllCustomersRetrievalServiceImpl: AllCustomersRetrievalService {
         }
     }
 
-    private suspend fun checkIfCustomerEntityIsEmpty(): Boolean {
-        return customerRepository.findAll().count() == 0
+    suspend fun checkIfCustomerEntityIsEmpty(): Boolean {
+        return customerRepository.count() == 0L
     }
 
 }
