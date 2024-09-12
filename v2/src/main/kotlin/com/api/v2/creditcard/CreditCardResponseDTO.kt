@@ -2,7 +2,7 @@ package com.api.v2.creditcard
 
 import java.time.LocalDate
 
-data class c(
+data class CreditCardResponseDTO(
     val ownerName: String,
     val cardNumber: String,
     val flag: String,
