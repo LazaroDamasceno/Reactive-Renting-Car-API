@@ -3,6 +3,7 @@ package com.api.v1.rent;
 import com.api.v1.car.domain.Car;
 import com.api.v1.customer.domain.Customer;
 import com.api.v1.payment.Payment;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
@@ -10,6 +11,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
+@Getter
 @Document(collection = "v1_rents")
 public class Rent {
 
