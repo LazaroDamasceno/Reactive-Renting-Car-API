@@ -1,5 +1,6 @@
-package com.api.v2.customer
+package com.api.v2.car
 
+import com.api.v2.car.dtos.CarUpdateRequestDto
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
@@ -10,17 +11,26 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-private class AllCustomersDeletionTest {
+private class CarUpdateTest {
 
     @Autowired
     private lateinit var webTestClient: WebTestClient
 
+    private val requestDto = CarUpdateRequestDto(
+        "RAM",
+        "2024",
+        "GM",
+        "7654321"
+    )
+
     @Test
     @Order(1)
-    fun testSuccessfulAllCustomersDeletion() {
+    fun testSuccessfulCarUpdating() {
+        val vin = "12345678901234567"
         webTestClient
-            .delete()
-            .uri("api/v1/customers")
+            .put()
+            .uri("api/v1/cars/${vin}")
+            .bodyValue(requestDto)
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -28,10 +38,12 @@ private class AllCustomersDeletionTest {
 
     @Test
     @Order(2)
-    fun testUnsuccessfulAllCustomersDeletion() {
+    fun testUnsuccessfulCarUpdating() {
+        val vin = "12345678901234566"
         webTestClient
-            .delete()
-            .uri("api/v1/customers")
+            .put()
+            .uri("api/v1/cars/${vin}")
+            .bodyValue(requestDto)
             .exchange()
             .expectStatus()
             .is5xxServerError()
