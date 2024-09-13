@@ -12,7 +12,7 @@ private class AllCreditCardsRetrievalTest {
     lateinit var webTestClient: WebTestClient
 
     @Test
-    fun testSuccessfulAllCreditCardsRetrieval() {
+    fun testIfCreditCarHasElements() {
         webTestClient
             .get()
             .uri("api/v2/credit-cards")
