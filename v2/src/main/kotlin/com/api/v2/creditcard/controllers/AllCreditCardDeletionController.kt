@@ -22,7 +22,7 @@ class AllCreditCardDeletionController {
         return service.deleteAll()
     }
 
-    @DeleteMapping("by-card-number/{cardNumber}")
+    @DeleteMapping("{cardNumber}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     suspend fun deleteByCardNumber(@PathVariable cardNumber: String) {
         return service.deleteByCardNumber(cardNumber)
