@@ -22,12 +22,6 @@ class AllCreditCardDeletionController {
         return service.deleteAll()
     }
 
-    @DeleteMapping("by-customer/{ssn}")
-    @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    suspend fun deleteAllByCustomer(@PathVariable ssn: String) {
-        return service.deleteAllByCustomer(ssn)
-    }
-
     @DeleteMapping("by-card-number/{cardNumber}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
     suspend fun deleteByCardNumber(@PathVariable cardNumber: String) {
