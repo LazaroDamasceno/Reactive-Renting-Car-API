@@ -1,6 +1,6 @@
 package com.api.v1.car;
 
-import com.api.v1.car.dtos.CarUpdatingRequestDto;
+import com.api.v1.dtos.CarUpdatingRequestDto;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

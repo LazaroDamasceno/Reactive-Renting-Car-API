@@ -1,6 +1,6 @@
 package com.api.v1.creditcard;
 
-import com.api.v1.creditcar.dtos.CreditCardRegistrationRequestDto;
+import com.api.v1.dtos.CreditCardRegistrationRequestDto;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
