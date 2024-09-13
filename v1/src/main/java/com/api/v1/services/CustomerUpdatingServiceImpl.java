@@ -5,6 +5,7 @@ import com.api.v1.domain.CustomerRepository;
 import com.api.v1.dtos.CustomerResponseDto;
 import com.api.v1.dtos.CustomerUpdatingRequestDto;
 import com.api.v1.mappers.CustomerResponseMapper;
+import com.api.v1.utils.CustomerFinderUtil;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,7 +28,7 @@ class CustomerUpdatingServiceImpl implements CustomerUpdatingService {
                     customer.update(requestDto);
                     return customerRepository.save(customer);
                 })
-                .flatMap(CustomerResponseMapper::mapToMono);
+                .flatMap(e -> Mono.just(new CustomerResponseMapper(e).mapToDto()));
     }
 
 }

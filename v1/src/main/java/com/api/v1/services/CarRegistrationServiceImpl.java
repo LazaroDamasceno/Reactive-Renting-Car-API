@@ -29,7 +29,7 @@ class CarRegistrationServiceImpl implements CarRegistrationService {
                         Car car = CarBuilder.create().fromDto(requestDto).build();
                         car.getPlateNumbers().add(requestDto.plateNumber());
                         return repository.save(car);
-                    }).flatMap(CarResponseMapper::mapToMono);
+                    }).flatMap(e -> Mono.just(new CarResponseMapper(e).mapToDto()));
                 });
     }
 

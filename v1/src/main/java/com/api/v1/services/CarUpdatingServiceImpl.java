@@ -6,6 +6,7 @@ import com.api.v1.dtos.CarResponseDto;
 import com.api.v1.dtos.CarUpdatingRequestDto;
 import com.api.v1.exceptions.DuplicatedPlateNumberException;
 import com.api.v1.mappers.CarResponseMapper;
+import com.api.v1.utils.CarFinderUtil;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,7 +32,7 @@ class CarUpdatingServiceImpl implements CarUpdatingService {
                     car.update(requestDto);
                     car.getPlateNumbers().add(requestDto.plateNumber());
                     return repository.save(car);
-                }).flatMap(CarResponseMapper::mapToMono);
+                }).flatMap(e -> Mono.just(new CarResponseMapper(e).mapToDto()));
     }
 
 }

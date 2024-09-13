@@ -26,7 +26,9 @@ class AllCreditCardsRetrievalServiceImpl implements AllCreditCardsRetrievalServi
                 .hasElements()
                 .flatMapMany(hasElements -> {
                     if (!hasElements) return Mono.error(new EmptyCreditCardEntityException());
-                    return CreditCardResponseMapper.mapToFlux(repository.findAll());
+                    return repository
+                            .findAll()
+                            .flatMap(e -> Flux.just(new CreditCardResponseMapper(e).mapToDto()));
                 });
     }
 
@@ -34,7 +36,7 @@ class AllCreditCardsRetrievalServiceImpl implements AllCreditCardsRetrievalServi
     public Mono<CreditCardResponseDto> findByCardNumber(String cardNumber) {
         return creditCardFinderUtil
                 .find(cardNumber)
-                .flatMap(CreditCardResponseMapper::mapToMono);
+                .flatMap(e -> Mono.just(new CreditCardResponseMapper(e).mapToDto()));
     }
 
 }

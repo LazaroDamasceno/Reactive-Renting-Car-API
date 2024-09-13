@@ -1,11 +1,12 @@
 package com.api.v1.domain;
 
-import lombok.Getter;
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.util.UUID;
+import lombok.Getter;
 
 @Getter
 @Document(collection = "v1_payments")

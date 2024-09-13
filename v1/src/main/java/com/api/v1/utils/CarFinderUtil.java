@@ -10,12 +10,11 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 @Component
-public class CarFinderUtil implements CarFinderUtil {
+public class CarFinderUtil {
 
     @Autowired
     private CarRepository repository;
 
-    @Override
     public Mono<Car> find(@VIN String vin) {
         return repository
                 .findAll()

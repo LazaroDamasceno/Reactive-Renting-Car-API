@@ -9,12 +9,11 @@ import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
 @Component
-class CustomerFinderUtil implements CustomerFinderUtil {
+public class CustomerFinderUtil {
 
     @Autowired
     private CustomerRepository repository;
 
-    @Override
     public Mono<Customer> find(@SSN String ssn) {
         return repository
                 .findAll()

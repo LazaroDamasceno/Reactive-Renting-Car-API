@@ -29,7 +29,7 @@ class CreditCardRegistrationServiceImpl implements CreditCardRegistrationService
                     return Mono.defer(() -> {
                         CreditCard creditCard = CreditCardBuilder.create().fromDto(requestDto).build();
                         Mono<CreditCard> savedCreditCard = repository.save(creditCard);
-                       return savedCreditCard.flatMap(CreditCardResponseMapper::mapToMono);
+                       return savedCreditCard.flatMap(e -> Mono.just(new CreditCardResponseMapper(e).mapToDto()));
                     });
                 });
     }

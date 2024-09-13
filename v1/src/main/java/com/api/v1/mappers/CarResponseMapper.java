@@ -11,7 +11,7 @@ public record CarResponseMapper(Car car) {
                 car.getModel(),
                 car.getProductionYear(),
                 car.getVin(),
-                car.getProductionYear(),
+                car.getPlateNumber(),
                 car.getAddedAt(),
                 car.getUpdatedAt()
         );

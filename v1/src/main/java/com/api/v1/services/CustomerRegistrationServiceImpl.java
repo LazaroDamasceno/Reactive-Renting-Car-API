@@ -1,5 +1,6 @@
 package com.api.v1.services;
 
+import com.api.v1.mappers.CreditCardResponseMapper;
 import com.api.v1.mappers.CustomerResponseMapper;
 import com.api.v1.builders.CustomerBuilder;
 import com.api.v1.domain.Customer;
@@ -29,7 +30,7 @@ class CustomerRegistrationServiceImpl implements CustomerRegistrationService {
                     return Mono.defer(() -> {
                         Customer customer = CustomerBuilder.create().fromDto(request).build();
                         return customerRepository.save(customer);
-                    }).flatMap(CustomerResponseMapper::mapToMono);
+                    }).flatMap(e -> Mono.just(new CustomerResponseMapper(e).mapToDto()));
                 });
     }
 
