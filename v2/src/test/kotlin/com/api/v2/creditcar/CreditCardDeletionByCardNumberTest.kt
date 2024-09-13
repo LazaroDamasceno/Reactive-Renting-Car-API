@@ -10,7 +10,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-private class CreditCardDeletionByCustomerTest {
+private class CreditCardDeletionByCardNumberTest {
 
     @Autowired
     lateinit var webTestClient: WebTestClient
@@ -18,9 +18,10 @@ private class CreditCardDeletionByCustomerTest {
     @Order(1)
     @Test
     fun testSuccessfulCreditCardDeletionByCardNumber() {
+        val cardNumber = "1234567890123456"
         webTestClient
             .delete()
-            .uri("api/v1/credit-cards/${1234567890123456}")
+            .uri("api/v2/credit-cards/$cardNumber")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -29,9 +30,10 @@ private class CreditCardDeletionByCustomerTest {
     @Order(2)
     @Test
     fun testUnsuccessfulCreditCardDeletionByCardNumber() {
+        val cardNumber = "1234567890123456"
         webTestClient
             .delete()
-            .uri("api/v1/credit-cards/${1234567890123456}")
+            .uri("api/v2/credit-cards/$cardNumber")
             .exchange()
             .expectStatus()
             .is5xxServerError()

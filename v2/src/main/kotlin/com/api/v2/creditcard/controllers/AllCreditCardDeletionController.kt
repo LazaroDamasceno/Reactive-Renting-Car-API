@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("api/v1/credit-cards")
+@RequestMapping("api/v2/credit-cards")
 class AllCreditCardDeletionController {
 
     @Autowired

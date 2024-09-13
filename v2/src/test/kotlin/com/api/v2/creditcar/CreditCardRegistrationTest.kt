@@ -12,7 +12,7 @@ import java.time.LocalDate
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-private class RegisterCreditCardTest {
+private class CreditCardRegistrationTest {
 
     @Autowired
     lateinit var webTestClient: WebTestClient
@@ -30,7 +30,7 @@ private class RegisterCreditCardTest {
     fun testSuccessfulCreditCardRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/credit-cards")
+            .uri("api/v2/credit-cards")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
@@ -42,7 +42,7 @@ private class RegisterCreditCardTest {
     fun testUnsuccessfulCreditCardRegistration() {
         webTestClient
             .post()
-            .uri("api/v1/credit-cards")
+            .uri("api/v2/credit-cards")
             .bodyValue(requestDto)
             .exchange()
             .expectStatus()
