@@ -1,8 +1,8 @@
 package com.api.v2.car.services
 
-import com.api.v2.annotations.EmptyFlowException
 import com.api.v2.car.domain.CarRepository
 import com.api.v2.car.dtos.CarResponseDto
+import com.api.v2.car.exceptions.EmptyCarEntityException
 import com.api.v2.car.mappers.CarResponseMapper
 import com.api.v2.car.utils.CarFinderUtil
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +24,7 @@ private class AllCarsRetrievalServiceImpl: AllCarsRetrievalService {
     override suspend fun findAll(): Flow<CarResponseDto> {
         return withContext(Dispatchers.IO) {
             if (checkIfFlowIsEmpty()) {
-                throw EmptyFlowException()
+                throw EmptyCarEntityException()
             }
             carRepository.findAll().map { car -> CarResponseMapper.mapToDto(car) }
         }
