@@ -8,7 +8,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("api/v1/credit-cards")
+@RequestMapping("api/v2/credit-cards")
 class AllCreditCardsRetrievalController {
 
     @Autowired
