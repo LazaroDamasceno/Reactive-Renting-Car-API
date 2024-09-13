@@ -20,7 +20,7 @@ private class AllCreditCardsDeletionByCustomerTest {
     fun testSuccessfulAllCreditCardsDeletionByCustomer() {
         webTestClient
             .delete()
-            .uri("api/v1/credit-cards/${123456789}")
+            .uri("api/v1/credit-cards/by-customer/${123456789}")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -31,7 +31,7 @@ private class AllCreditCardsDeletionByCustomerTest {
     fun testUnsuccessfulAllCreditCardsDeletionByCustomer() {
         webTestClient
             .delete()
-            .uri("api/v1/credit-cards/${123456789}")
+            .uri("api/v1/credit-cards/by-customer/${123456789}")
             .exchange()
             .expectStatus()
             .is5xxServerError()

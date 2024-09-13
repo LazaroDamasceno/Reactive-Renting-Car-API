@@ -1,6 +1,6 @@
 package com.api.v2.creditcard.services
 
-interface AllCreditCarsDeletionService {
+interface AllCreditCardDeletionService {
 
     suspend fun deleteAll()
     suspend fun deleteAllByCustomer(ssn: String)

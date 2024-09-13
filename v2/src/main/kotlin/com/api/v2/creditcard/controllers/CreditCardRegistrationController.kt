@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*
 
 @RestController
 @RequestMapping("api/v1/credit-cards")
-class CreditCardController {
+class CreditCardRegistrationController {
 
     @Autowired
     private lateinit var service: CreditCardRegistrationService

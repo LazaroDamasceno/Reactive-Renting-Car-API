@@ -17,7 +17,7 @@ private class CreditCardDeletionByCustomerTest {
 
     @Order(1)
     @Test
-    fun testSuccessfulCreditCardDeletionByCustomer() {
+    fun testSuccessfulCreditCardDeletionByCardNumber() {
         webTestClient
             .delete()
             .uri("api/v1/credit-cards/${1234567890123456}")
@@ -28,7 +28,7 @@ private class CreditCardDeletionByCustomerTest {
 
     @Order(2)
     @Test
-    fun testUnsuccessfulCreditCardDeletionByCustomer() {
+    fun testUnsuccessfulCreditCardDeletionByCardNumber() {
         webTestClient
             .delete()
             .uri("api/v1/credit-cards/${1234567890123456}")
