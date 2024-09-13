@@ -5,7 +5,7 @@ import java.time.LocalDate
 import java.time.ZonedDateTime
 import java.util.UUID
 
-@Document(collection = "v1_credit_cards")
+@Document(collection = "v2_credit_cards")
 data class CreditCard(
     val id: UUID,
     val ownerName: String,
