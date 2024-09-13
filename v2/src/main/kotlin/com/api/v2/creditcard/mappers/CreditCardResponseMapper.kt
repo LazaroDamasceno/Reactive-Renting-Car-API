@@ -8,12 +8,9 @@ class CreditCardResponseMapper {
     companion object {
         fun map(creditCard: CreditCard): CreditCardResponseDto {
             return CreditCardResponseDto(
-                creditCard.ownerName,
                 creditCard.cardNumber,
                 creditCard.flag,
-                creditCard.cvc,
-                creditCard.dueDate,
-                creditCard.addedAt
+                creditCard.dueDate
             )
         }
     }
