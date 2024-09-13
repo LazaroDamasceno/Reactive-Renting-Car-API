@@ -1,8 +1,8 @@
 package com.api.v1.creditcar.services;
 
-import com.api.v1.annotations.EmptyFluxException;
 import com.api.v1.creditcar.domain.CreditCardRepository;
 import com.api.v1.creditcar.dtos.CreditCardResponseDto;
+import com.api.v1.creditcar.exceptions.EmptyCreditCardEntityException;
 import com.api.v1.creditcar.mappers.CreditCardResponseMapper;
 import com.api.v1.creditcar.utils.CreditCardFinderUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +25,7 @@ class AllCreditCardsRetrievalServiceImpl implements AllCreditCardsRetrievalServi
                 .findAll()
                 .hasElements()
                 .flatMapMany(hasElements -> {
-                    if (!hasElements) return Mono.error(new EmptyFluxException());
+                    if (!hasElements) return Mono.error(new EmptyCreditCardEntityException());
                     return CreditCardResponseMapper.mapToFlux(repository.findAll());
                 });
     }

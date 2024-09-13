@@ -1,6 +1,6 @@
 package com.api.v1.customer.services;
 
-import com.api.v1.annotations.EmptyFluxException;
+import com.api.v1.creditcar.exceptions.EmptyCreditCardEntityException;
 import com.api.v1.customer.annotations.SSN;
 import com.api.v1.customer.domain.CustomerRepository;
 import com.api.v1.customer.dtos.CustomerResponseDto;
@@ -33,7 +33,7 @@ class AllCustomersRetrievingServiceImpl implements AllCustomersRetrievingService
                 .findAll()
                 .hasElements()
                 .flatMapMany(hasElements -> {
-                    if (!hasElements) return Mono.error(new EmptyFluxException());
+                    if (!hasElements) return Mono.error(new EmptyCreditCardEntityException());
                     return CustomerResponseMapper.mapToFlux(repository.findAll());
                 });
     }

@@ -1,7 +1,6 @@
 package com.api.v1.car.controllers;
 
 import com.api.v1.car.annotations.VIN;
-import com.api.v1.car.exceptions.CarEntityNotExistException;
 import com.api.v1.car.services.AllCarsDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

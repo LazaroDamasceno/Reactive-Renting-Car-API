@@ -1,9 +1,9 @@
 package com.api.v1.car.services;
 
-import com.api.v1.annotations.EmptyFluxException;
 import com.api.v1.car.annotations.VIN;
 import com.api.v1.car.domain.CarRepository;
 import com.api.v1.car.dtos.CarResponseDto;
+import com.api.v1.car.exceptions.EmptyCarEntityException;
 import com.api.v1.car.mappers.CarResponseMapper;
 import com.api.v1.car.utils.CarFinderUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,7 +33,7 @@ class AllCarsRetrievingServiceImpl implements AllCarsRetrievingService {
                 .findAll()
                 .hasElements()
                 .flatMapMany(hasElements -> {
-                    if (!hasElements) return Mono.error(EmptyFluxException::new);
+                    if (!hasElements) return Mono.error(EmptyCarEntityException::new);
                     return CarResponseMapper.mapToFLux(repository.findAll());
                 });
     }
