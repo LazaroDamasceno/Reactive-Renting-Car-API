@@ -20,7 +20,7 @@ class AllCreditCardsDeletionTest {
     void testSuccessfulCreditCardDeletion() {
         webTestClient
                 .delete()
-                .uri("api/v1/credit-cars")
+                .uri("api/v1/credit-cards")
                 .exchange()
                 .expectStatus()
                 .is2xxSuccessful();
@@ -31,7 +31,7 @@ class AllCreditCardsDeletionTest {
     void testUnsuccessfulCreditCardDeletion() {
         webTestClient
                 .delete()
-                .uri("api/v1/credit-cars")
+                .uri("api/v1/credit-cards")
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();

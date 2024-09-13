@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("api/v1/credit-cars")
+@RequestMapping("api/v1/credit-cards")
 public class AllCreditCardsDeletionController {
 
     @Autowired
