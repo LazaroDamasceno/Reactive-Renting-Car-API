@@ -13,7 +13,7 @@ public class PaymentBuilder {
     private Customer customer;
     private Car car;
     private CreditCard creditCard;
-    private String paidAt = ZonedDateTime.now().toString();
+    private final String paidAt = ZonedDateTime.now().toString();
 
     private PaymentBuilder() {}
 
