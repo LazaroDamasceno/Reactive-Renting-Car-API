@@ -1,5 +1,6 @@
 package com.api.v2.creditcard.domain
 
+import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.time.LocalDate
 import java.time.ZonedDateTime
@@ -7,6 +8,7 @@ import java.util.UUID
 
 @Document(collection = "v2_credit_cards")
 data class CreditCard(
+    @Id
     val id: UUID,
     val ownerName: String,
     val cardNumber: String,
