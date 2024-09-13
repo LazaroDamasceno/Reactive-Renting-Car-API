@@ -6,7 +6,7 @@ import com.api.v2.creditcard.dtos.CreditCardResponseDto
 class CreditCardResponseMapper {
 
     companion object {
-        fun map(creditCard: CreditCard): CreditCardResponseDto {
+        fun mapToDto(creditCard: CreditCard): CreditCardResponseDto {
             return CreditCardResponseDto(
                 creditCard.cardNumber,
                 creditCard.flag,

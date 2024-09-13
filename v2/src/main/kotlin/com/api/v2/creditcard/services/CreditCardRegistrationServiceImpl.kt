@@ -29,7 +29,7 @@ private class CreditCardRegistrationServiceImpl: CreditCardRegistrationService {
                 throw DuplicatedCardNumberException(creditCard.cardNumber)
             }
             val savedCredit = creditCardRepository.save(creditCard)
-            CreditCardResponseMapper.map(savedCredit)
+            CreditCardResponseMapper.mapToDto(savedCredit)
         }
     }
 

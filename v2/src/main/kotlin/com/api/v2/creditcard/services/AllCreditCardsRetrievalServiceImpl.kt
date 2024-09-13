@@ -25,7 +25,7 @@ private class AllCreditCardsRetrievalServiceImpl: AllCreditCardsRetrievalService
     override suspend  fun findByCardNumber(cardNumber: String): CreditCardResponseDto {
         return withContext(Dispatchers.IO) {
             val creditCard = creditCardFinderUtil.find(cardNumber)
-            CreditCardResponseMapper.map(creditCard)
+            CreditCardResponseMapper.mapToDto(creditCard)
         }
     }
 
@@ -34,7 +34,7 @@ private class AllCreditCardsRetrievalServiceImpl: AllCreditCardsRetrievalService
             if (creditCardRepository.findAll().count() == 0) {
                 throw EmptyFlowException()
             }
-            creditCardRepository.findAll().map { e -> CreditCardResponseMapper.map(e) }
+            creditCardRepository.findAll().map { e -> CreditCardResponseMapper.mapToDto(e) }
         }
     }
 
