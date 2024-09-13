@@ -1,4 +1,4 @@
-package com.api.v1.creditcar;
+package com.api.v1.creditcar.domain;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.repository.reactive.ReactiveCrudRepository;
