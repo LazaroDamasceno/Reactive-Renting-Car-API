@@ -8,12 +8,12 @@ public class CreditCardResponseMapper {
 
     public static Mono<CreditCardResponseDto> map(CreditCard creditCard) {
         return Mono.just(new CreditCardResponseDto(
-                creditCard.ownerName(),
-                creditCard.cardNumber(),
-                creditCard.flag(),
-                creditCard.cvc(),
-                creditCard.dueDate(),
-                creditCard.addedAt()
+                creditCard.getOwnerName(),
+                creditCard.getCardNumber(),
+                creditCard.getFlag(),
+                creditCard.getCvc(),
+                creditCard.getDueDate(),
+                creditCard.getAddedAt()
         ));
     }
 

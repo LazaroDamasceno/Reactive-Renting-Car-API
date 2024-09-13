@@ -14,25 +14,25 @@ import java.util.UUID;
 public class CreditCard {
 
     @Id
-    private final UUID id;
+    private UUID id;
 
     @Field
-    private final String ownerName;
+    private String ownerName;
 
     @Field
-    private final String cardNumber;
+    private String cardNumber;
 
     @Field
-    private final String flag;
+    private String flag;
 
     @Field
-    private final String cvc;
+    private String cvc;
 
     @Field
-    private final LocalDate dueDate;
+    private LocalDate dueDate;
 
     @Field
-    private final String addedAt;
+    private String addedAt;
 
     public CreditCard(
             String ownerName,

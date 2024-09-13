@@ -16,7 +16,7 @@ public class CreditCardFinderUtil {
     public Mono<CreditCard> find(String cardNumber) {
         return repository
                 .findAll()
-                .filter(e -> e.cardNumber().equals(cardNumber))
+                .filter(e -> e.getCardNumber().equals(cardNumber))
                 .singleOrEmpty()
                 .switchIfEmpty(Mono.error(new CreditCardNotFoundException(cardNumber)));
     }

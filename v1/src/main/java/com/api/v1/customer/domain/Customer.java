@@ -15,7 +15,7 @@ import java.util.UUID;
 public class Customer {
 
     @Id
-    private final UUID id;
+    private UUID id;
 
     @Field
     private String firstName;
@@ -42,7 +42,7 @@ public class Customer {
     private String phoneNumber;
 
     @Field
-    private final String createdAt;
+    private String createdAt;
 
     @Field
     private String updatedAt;
