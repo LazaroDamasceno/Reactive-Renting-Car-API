@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class CreditCardRetrievalTest {
+class AllCreditCardsRetrievalTest {
 
     @Autowired
     WebTestClient webTestClient;
