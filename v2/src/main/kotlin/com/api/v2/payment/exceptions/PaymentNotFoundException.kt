@@ -1,4 +1,4 @@
-package com.api.v2.payment
+package com.api.v2.payment.exceptions
 
 import java.math.BigInteger
 

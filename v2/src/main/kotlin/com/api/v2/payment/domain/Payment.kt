@@ -1,4 +1,4 @@
-package com.api.v2.payment
+package com.api.v2.payment.domain
 
 import com.api.v2.car.domain.Car
 import com.api.v2.creditcard.domain.CreditCard
