@@ -1,4 +1,4 @@
-package com.api.v1.creditcar;
+package com.api.v1.creditcar.controller;
 
 import com.api.v1.creditcar.domain.CreditCard;
 import com.api.v1.creditcar.dtos.CreditCardResponseDto;
