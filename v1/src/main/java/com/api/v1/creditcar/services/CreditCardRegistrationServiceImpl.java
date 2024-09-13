@@ -5,6 +5,7 @@ import com.api.v1.creditcar.domain.CreditCardRepository;
 import com.api.v1.creditcar.dtos.CreditCardResponseDto;
 import com.api.v1.creditcar.exceptions.DuplicatedCardNumberException;
 import com.api.v1.creditcar.mappers.CreditCardResponseMapper;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Mono;
@@ -16,7 +17,7 @@ class CreditCardRegistrationServiceImpl implements CreditCardRegistrationService
     private CreditCardRepository repository;
 
     @Override
-    public Mono<CreditCardResponseDto> register(CreditCard creditCard) {
+    public Mono<CreditCardResponseDto> register(@Valid CreditCard creditCard) {
         return repository
                 .findAll()
                 .filter(e -> e.cardNumber().equals(creditCard.cardNumber()))
