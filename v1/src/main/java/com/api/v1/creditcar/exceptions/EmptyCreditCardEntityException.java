@@ -1,8 +1,8 @@
 package com.api.v1.creditcar.exceptions;
 
-public class EmptyCreditCardEntity extends RuntimeException {
+public class EmptyCreditCardEntityException extends RuntimeException {
 
-    public EmptyCreditCardEntity() {
+    public EmptyCreditCardEntityException() {
         super("The entity CreditCard is empty.");
     }
 
