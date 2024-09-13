@@ -2,20 +2,10 @@ package com.api.v1.car.mappers;
 
 import com.api.v1.car.domain.Car;
 import com.api.v1.car.dtos.CarResponseDto;
-import reactor.core.publisher.Flux;
-import reactor.core.publisher.Mono;
 
-public class CarResponseMapper {
+public record CarResponseMapper(Car car) {
 
-    public static Mono<CarResponseDto> mapToMono(Car car) {
-        return Mono.just(mapToDto(car));
-    }
-
-    public static Flux<CarResponseDto> mapToFLux(Flux<Car> cars) {
-        return cars.flatMap(car -> Flux.just(mapToDto(car)));
-    }
-
-    private static CarResponseDto mapToDto(Car car) {
+    public CarResponseDto mapToDto() {
         return new CarResponseDto(
                 car.getMake(),
                 car.getModel(),
