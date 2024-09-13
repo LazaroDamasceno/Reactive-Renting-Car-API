@@ -5,6 +5,7 @@ import com.api.v1.creditcar.domain.CreditCardRepository;
 import com.api.v1.creditcar.dtos.CreditCardResponseDto;
 import com.api.v1.creditcar.mappers.CreditCardResponseMapper;
 import com.api.v1.creditcar.utils.CreditCardFinderUtil;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
@@ -31,7 +32,7 @@ class AllCreditCardsRetrievalServiceImpl implements AllCreditCardsRetrievalServi
     }
 
     @Override
-    public Mono<CreditCardResponseDto> findByCardNumber(String cardNumber) {
+    public Mono<CreditCardResponseDto> findByCardNumber(@Valid String cardNumber) {
         return creditCardFinderUtil
                 .find(cardNumber)
                 .flatMap(CreditCardResponseMapper::mapToMono);
