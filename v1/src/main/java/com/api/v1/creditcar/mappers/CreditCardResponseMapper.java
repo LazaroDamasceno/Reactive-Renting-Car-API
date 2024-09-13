@@ -19,10 +19,7 @@ public class CreditCardResponseMapper {
         return new CreditCardResponseDto(
                 creditCard.getOwnerName(),
                 creditCard.getCardNumber(),
-                creditCard.getFlag(),
-                creditCard.getCvc(),
-                creditCard.getDueDate(),
-                creditCard.getAddedAt()
+                creditCard.getDueDate()
         );
     }
 
