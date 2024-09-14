@@ -30,7 +30,7 @@ private class PaymentRetrievalByOrderNumberTest {
     fun testUnsuccessfulPaymentRetrieval() {
         webTestClient
             .get()
-            .uri("api/v1/payments/${20240001}")
+            .uri("api/v1/payments/${20240002}")
             .exchange()
             .expectStatus()
             .is5xxServerError()
