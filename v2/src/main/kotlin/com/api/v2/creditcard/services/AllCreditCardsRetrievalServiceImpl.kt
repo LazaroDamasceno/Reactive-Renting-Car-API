@@ -1,8 +1,8 @@
 package com.api.v2.creditcard.services;
 
-import com.api.v2.annotations.EmptyFlowException
 import com.api.v2.creditcard.domain.CreditCardRepository
 import com.api.v2.creditcard.dtos.CreditCardResponseDto
+import com.api.v2.creditcard.exceptions.EmptyCreditCarEntityException
 import com.api.v2.creditcard.mappers.CreditCardResponseMapper
 import com.api.v2.creditcard.utils.CreditCardFinderUtil
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +32,7 @@ private class AllCreditCardsRetrievalServiceImpl: AllCreditCardsRetrievalService
     override suspend  fun findAll(): Flow<CreditCardResponseDto> {
         return withContext(Dispatchers.IO) {
             if (creditCardRepository.findAll().count() == 0) {
-                throw EmptyFlowException()
+                throw EmptyCreditCarEntityException()
             }
             creditCardRepository.findAll().map { e -> CreditCardResponseMapper.mapToDto(e) }
         }

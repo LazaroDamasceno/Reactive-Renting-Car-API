@@ -13,12 +13,13 @@ import java.time.ZonedDateTime
 class PaymentResponseMapper {
 
     companion object {
-        fun map(customer: Customer, car: Car, creditCard: CreditCard): PaymentResponseDto {
+        fun map(payment: Payment, customer: Customer, car: Car, creditCard: CreditCard): PaymentResponseDto {
             return PaymentResponseDto(
+                payment.orderNumber,
                 CustomerResponseMapper.mapToDto(customer),
                 CarResponseMapper.mapToDto(car),
                 CreditCardResponseMapper.mapToDto(creditCard),
-                ZonedDateTime.now().toString()
+                payment.paidAt
             )
         }
     }

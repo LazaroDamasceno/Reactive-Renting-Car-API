@@ -1,8 +1,8 @@
 package com.api.v2.customer.services
 
-import com.api.v2.annotations.EmptyFlowException
 import com.api.v2.customer.domain.CustomerRepository
 import com.api.v2.customer.dtos.CustomerResponseDto
+import com.api.v2.customer.exceptions.EmptyCustomerEntityException
 import com.api.v2.customer.mappers.CustomerResponseMapper
 import com.api.v2.customer.utils.CustomerFinderUtil
 import kotlinx.coroutines.Dispatchers
@@ -32,7 +32,7 @@ private class AllCustomersRetrievalServiceImpl: AllCustomersRetrievalService {
     override suspend fun findAll(): Flow<CustomerResponseDto> {
         return withContext(Dispatchers.IO) {
             if (checkIfCustomerEntityIsEmpty()) {
-                throw EmptyFlowException()
+                throw EmptyCustomerEntityException()
             }
             customerRepository.findAll().map { customer -> CustomerResponseMapper.mapToDto(customer) }
         }

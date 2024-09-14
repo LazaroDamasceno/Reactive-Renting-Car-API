@@ -13,7 +13,7 @@ import java.util.UUID
 @Document(collection = "v2_payments")
 data class Payment(
     @Id val id: UUID,
-    val paymentOrder: BigInteger,
+    val orderNumber: BigInteger,
     val customer: Customer,
     val car: Car,
     val creditCard: CreditCard,

@@ -19,12 +19,10 @@ class CreditCardFinderUtil {
 
     suspend fun find(cardNumber: String): CreditCard {
         return withContext(Dispatchers.IO) {
-            val foundedCreditCard = creditCardRepository
+            creditCardRepository
                 .findAll()
                 .filter { e -> e.cardNumber == cardNumber }
-                .firstOrNull();
-            if (foundedCreditCard == null) throw CreditCardNotFoundException(cardNumber)
-            foundedCreditCard
+                .firstOrNull() ?: throw CreditCardNotFoundException(cardNumber)
         }
     }
 
