@@ -4,13 +4,16 @@ import com.api.v1.domain.Car;
 import com.api.v1.domain.CreditCard;
 import com.api.v1.domain.Customer;
 import com.api.v1.domain.Payment;
+import com.api.v1.utils.PaymentOrderNumberGeneratorUtil;
 
+import java.math.BigInteger;
 import java.time.ZonedDateTime;
 import java.util.UUID;
 
 public class PaymentBuilder {
 
     private final UUID id = UUID.randomUUID();
+    private final BigInteger orderNumber = PaymentOrderNumberGeneratorUtil.generate();
     private Customer customer;
     private Car car;
     private CreditCard creditCard;
@@ -40,6 +43,7 @@ public class PaymentBuilder {
     public Payment build() {
         return new Payment(
                 id,
+                orderNumber,
                 customer,
                 car,
                 creditCard,

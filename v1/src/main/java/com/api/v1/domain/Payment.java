@@ -1,5 +1,6 @@
 package com.api.v1.domain;
 
+import java.math.BigInteger;
 import java.util.UUID;
 
 import org.springframework.data.annotation.Id;
@@ -16,6 +17,9 @@ public class Payment {
     private UUID id;
 
     @Field
+    private BigInteger orderNumber;
+
+    @Field
     private Customer customer;
 
     @Field
@@ -29,6 +33,7 @@ public class Payment {
 
     public Payment(
             UUID id,
+            BigInteger orderNumber,
             Customer customer,
             Car car,
             CreditCard creditCard,
@@ -36,6 +41,7 @@ public class Payment {
     ) {
         this.id = id;
         this.customer = customer;
+        this.orderNumber = orderNumber;
         this.car = car;
         this.creditCard = creditCard;
         this.paidAt = paidAt;
