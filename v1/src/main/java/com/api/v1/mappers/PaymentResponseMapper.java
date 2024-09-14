@@ -9,16 +9,15 @@ import com.api.v1.domain.Customer;
 import java.math.BigInteger;
 
 public record PaymentResponseMapper(
-        BigInteger orderNumber,
+        Payment payment,
         Customer customer,
         Car car,
-        CreditCard creditCard,
-        Payment payment
+        CreditCard creditCard
 ) {
 
-    PaymentResponseDto map() {
+    public PaymentResponseDto map() {
         return new PaymentResponseDto(
-                orderNumber,
+                payment.getOrderNumber(),
                 new CustomerResponseMapper(customer).mapToDto(),
                 new CarResponseMapper(car).mapToDto(),
                 new CreditCardResponseMapper(creditCard).mapToDto(),

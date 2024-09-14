@@ -35,7 +35,7 @@ public class PaymentBuilder {
         return this;
     }
 
-    public PaymentBuilder withCustomer(CreditCard creditCard) {
+    public PaymentBuilder withCreditCard(CreditCard creditCard) {
         this.creditCard = creditCard;
         return this;
     }
