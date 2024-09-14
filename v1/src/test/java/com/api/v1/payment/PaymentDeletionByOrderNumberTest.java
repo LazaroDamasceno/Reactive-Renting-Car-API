@@ -10,16 +10,16 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class PaymentRetrievalByOrderNumberTest {
+public class PaymentDeletionByOrderNumberTest {
 
     @Autowired
     WebTestClient webTestClient;
 
     @Test
     @Order(1)
-    void testSuccessfulPaymentRetrievalByOrderNumber() {
+    void testSuccessfulPaymentDeletion() {
         webTestClient
-                .get()
+                .delete()
                 .uri("api/v1/payments/%s".formatted("20240001"))
                 .exchange()
                 .expectStatus()
@@ -27,10 +27,10 @@ public class PaymentRetrievalByOrderNumberTest {
     }
 
     @Test
-    void testUnsuccessfulPaymentRetrievalByOrderNumber() {
+    void testUnSuccessfulPaymentDeletion() {
         webTestClient
-                .get()
-                .uri("api/v1/payments/%s".formatted("20240001"))
+                .delete()
+                .uri("api/v1/payments/%s".formatted("20240002"))
                 .exchange()
                 .expectStatus()
                 .is2xxSuccessful();
