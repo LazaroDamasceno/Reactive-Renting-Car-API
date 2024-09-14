@@ -29,11 +29,11 @@ private class PaymentRegistrationServiceImpl: PaymentRegistrationService {
 
     override suspend fun register(ssn: String, vin: String, cardNumber: String): PaymentResponseDto {
         return withContext(Dispatchers.IO) {
-            val customer = customerFinderUtil.find("123456789")
-            val car = carFinderUtil.find("1234567890123456")
-            val creditCard = creditCardFinderUtil.find("1234567890123456")
+            val customer = customerFinderUtil.find(ssn)
+            val car = carFinderUtil.find(vin)
+            val creditCard = creditCardFinderUtil.find(cardNumber)
             val payment = Payment(customer, car, creditCard)
-            val savedPayment =paymentRepository.save(payment)
+            val savedPayment = paymentRepository.save(payment)
             PaymentResponseMapper.map(savedPayment, customer, car, creditCard)
         }
     }

@@ -15,10 +15,9 @@ class PaymentRegistrationController {
 
     @PostMapping("{ssn}/{vin}/{cardNumber}")
     @ResponseStatus(value = HttpStatus.CREATED)
-    suspend fun register(
-        @PathVariable ssn: String,
-        @PathVariable vin: String,
-        @PathVariable cardNumber: String
+    suspend fun register(@PathVariable ssn: String,
+                         @PathVariable vin: String,
+                         @PathVariable cardNumber: String
     ): PaymentResponseDto {
         return service.register(ssn, vin, cardNumber)
     }
