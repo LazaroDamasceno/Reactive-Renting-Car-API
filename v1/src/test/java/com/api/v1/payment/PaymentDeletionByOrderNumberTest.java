@@ -30,10 +30,10 @@ public class PaymentDeletionByOrderNumberTest {
     void testUnSuccessfulPaymentDeletion() {
         webTestClient
                 .delete()
-                .uri("api/v1/payments/%s".formatted("20240002"))
+                .uri("api/v1/payments/%s".formatted("20240001"))
                 .exchange()
                 .expectStatus()
-                .is2xxSuccessful();
+                .is5xxServerError();
     }
 
 }

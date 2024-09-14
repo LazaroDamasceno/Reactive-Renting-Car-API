@@ -31,7 +31,7 @@ class CreditCardDeletionByCarNumberTest {
     void testUnsuccessfulCreditCreditCardDeletionByCarNumber() {
         webTestClient
                 .delete()
-                .uri("api/v1/credit-cards/%16d".formatted(1234567890123455L))
+                .uri("api/v1/credit-cards/%16d".formatted(1234567890123456L))
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();
