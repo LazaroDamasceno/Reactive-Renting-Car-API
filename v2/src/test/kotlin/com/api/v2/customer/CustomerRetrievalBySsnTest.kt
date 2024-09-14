@@ -23,7 +23,7 @@ private class CustomerRetrievalBySsnTest {
             .uri("api/v2/customers/${123456789}")
             .exchange()
             .expectStatus()
-            .is2xxSuccessful
+            .is2xxSuccessful()
     }
 
     @Test
@@ -34,7 +34,7 @@ private class CustomerRetrievalBySsnTest {
             .uri("api/v2/customers/${123456789}")
             .exchange()
             .expectStatus()
-            .is5xxServerError
+            .is5xxServerError()
     }
 
 }
