@@ -8,7 +8,6 @@ import com.api.v2.customer.domain.Customer
 import com.api.v2.customer.mappers.CustomerResponseMapper
 import com.api.v2.payment.domain.Payment
 import com.api.v2.payment.dtos.PaymentResponseDto
-import java.time.ZonedDateTime
 
 class PaymentResponseMapper {
 
