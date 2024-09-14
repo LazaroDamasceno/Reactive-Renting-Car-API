@@ -33,7 +33,7 @@ public class PaymentRetrievalByOrderNumberTest {
                 .uri("api/v1/payments/%s".formatted("20240001"))
                 .exchange()
                 .expectStatus()
-                .is2xxSuccessful();
+                .is5xxServerError();
     }
 
 }

@@ -17,7 +17,7 @@ public class AllPaymentsDeletionTest {
 
     @Test
     @Order(1)
-    void tesSuccessfulAllPaymentsTest() {
+    void testSuccessfulAllPaymentsTest() {
         webTestClient
                 .delete()
                 .uri("api/v1/payments")
@@ -27,7 +27,7 @@ public class AllPaymentsDeletionTest {
     }
 
     @Test
-    void tesUnsuccessfulAllPaymentsTest() {
+    void testUnsuccessfulAllPaymentsTest() {
         webTestClient
                 .delete()
                 .uri("api/v1/payments")
