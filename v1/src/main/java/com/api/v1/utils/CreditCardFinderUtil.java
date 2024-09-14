@@ -1,5 +1,6 @@
 package com.api.v1.utils;
 
+import com.api.v1.annotations.CardNumber;
 import com.api.v1.domain.CreditCard;
 import com.api.v1.domain.CreditCardRepository;
 import com.api.v1.exceptions.CreditCardNotFoundException;
@@ -13,7 +14,7 @@ public class CreditCardFinderUtil {
     @Autowired
     private CreditCardRepository repository;
 
-    public Mono<CreditCard> find(String cardNumber) {
+    public Mono<CreditCard> find(@CardNumber String cardNumber) {
         return repository
                 .findAll()
                 .filter(e -> e.getCardNumber().equals(cardNumber))

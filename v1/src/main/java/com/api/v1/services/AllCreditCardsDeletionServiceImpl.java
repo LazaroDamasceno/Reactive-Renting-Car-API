@@ -1,5 +1,6 @@
 package com.api.v1.services;
 
+import com.api.v1.annotations.CardNumber;
 import com.api.v1.domain.CreditCardRepository;
 import com.api.v1.exceptions.EmptyCreditCardEntityException;
 import com.api.v1.utils.CreditCardFinderUtil;
@@ -28,7 +29,7 @@ class AllCreditCardsDeletionServiceImpl implements AllCreditCardsDeletionService
     }
 
     @Override
-    public Mono<Void> deleteByCardNumber(String cardNumber) {
+    public Mono<Void> deleteByCardNumber(@CardNumber String cardNumber) {
         return creditCardFinderUtil
                 .find(cardNumber)
                 .flatMap(cc -> repository.delete(cc));

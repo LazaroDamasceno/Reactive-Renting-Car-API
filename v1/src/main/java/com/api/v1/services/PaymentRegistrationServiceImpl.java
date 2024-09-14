@@ -1,5 +1,6 @@
 package com.api.v1.services;
 
+import com.api.v1.annotations.*;
 import com.api.v1.builders.PaymentBuilder;
 import com.api.v1.domain.*;
 import com.api.v1.dtos.PaymentResponseDto;
@@ -26,11 +27,8 @@ class PaymentRegistrationServiceImpl implements PaymentRegistrationService {
     @Autowired
     private CreditCardFinderUtil creditCardFinderUtil;
 
-    @Autowired
-    private PaymentRepository paymentRepository;
-
     @Override
-    public Mono<PaymentResponseDto> register(String ssn, String vin, String cardNumber) {
+    public Mono<PaymentResponseDto> register(@SSN String ssn, @VIN String vin, @CardNumber String cardNumber) {
         Mono<Customer> customerMono = customerFinderUtil.find(ssn);
         Mono<Car> carMono = carFinderUtil.find(vin);
         Mono<CreditCard> creditCardMono = creditCardFinderUtil.find(cardNumber);

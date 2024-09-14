@@ -1,5 +1,6 @@
 package com.api.v1.services;
 
+import com.api.v1.annotations.CardNumber;
 import com.api.v1.domain.CreditCardRepository;
 import com.api.v1.dtos.CreditCardResponseDto;
 import com.api.v1.exceptions.EmptyCreditCardEntityException;
@@ -33,7 +34,7 @@ class AllCreditCardsRetrievalServiceImpl implements AllCreditCardsRetrievalServi
     }
 
     @Override
-    public Mono<CreditCardResponseDto> findByCardNumber(String cardNumber) {
+    public Mono<CreditCardResponseDto> findByCardNumber(@CardNumber String cardNumber) {
         return creditCardFinderUtil
                 .find(cardNumber)
                 .flatMap(e -> Mono.just(new CreditCardResponseMapper(e).mapToDto()));
