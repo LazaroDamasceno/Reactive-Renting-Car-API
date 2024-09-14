@@ -1,10 +1,5 @@
 package com.api.v2.payment
 
-import com.api.v2.car.utils.CarFinderUtil
-import com.api.v2.creditcard.utils.CreditCardFinderUtil
-import com.api.v2.customer.utils.CustomerFinderUtil
-import com.api.v2.payment.domain.Payment
-import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -26,10 +21,49 @@ private class PaymentRegistrationTest {
         val cardNumber = "1234567890123456"
         webTestClient
             .post()
-            .uri("api/v2/payments")
+            .uri("api/v2/payments/$ssn/$vin/$cardNumber")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
+    }
+
+    @Test
+    fun testUnsuccessfulPaymentRegistration1() {
+        val ssn = "123456788"
+        val vin = "12345678901234567"
+        val cardNumber = "1234567890123456"
+        webTestClient
+            .post()
+            .uri("api/v2/payments/$ssn/$vin/$cardNumber")
+            .exchange()
+            .expectStatus()
+            .is5xxServerError()
+    }
+
+    @Test
+    fun testUnsuccessfulPaymentRegistration2() {
+        val ssn = "123456789"
+        val vin = "12345678901234566"
+        val cardNumber = "1234567890123456"
+        webTestClient
+            .post()
+            .uri("api/v2/payments/$ssn/$vin/$cardNumber")
+            .exchange()
+            .expectStatus()
+            .is5xxServerError()
+    }
+
+    @Test
+    fun testUnsuccessfulPaymentRegistration3() {
+        val ssn = "123456789"
+        val vin = "12345678901234567"
+        val cardNumber = "1234567890123455"
+        webTestClient
+            .post()
+            .uri("api/v2/payments/$ssn/$vin/$cardNumber")
+            .exchange()
+            .expectStatus()
+            .is5xxServerError()
     }
 
 }
