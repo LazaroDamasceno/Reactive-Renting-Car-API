@@ -1,12 +1,13 @@
 package com.api.v1.dtos;
 
+import java.time.LocalDate;
+
+import com.api.v1.annotations.PhoneNumber;
 import com.api.v1.annotations.SSN;
+
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Size;
-
-import java.time.LocalDate;
 
 public record CustomerRegistrationRequestDto(
         @NotBlank String firstName,
@@ -16,6 +17,6 @@ public record CustomerRegistrationRequestDto(
         @NotNull LocalDate birthDate,
         @NotBlank @Email String email,
         @NotBlank String address,
-        @NotBlank @Size(min=10, max=10) String phoneNumber
+        @PhoneNumber String phoneNumber
 ) {
 }

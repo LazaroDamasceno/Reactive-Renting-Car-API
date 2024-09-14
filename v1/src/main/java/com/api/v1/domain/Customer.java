@@ -1,14 +1,16 @@
 package com.api.v1.domain;
 
-import com.api.v1.dtos.CustomerUpdatingRequestDto;
-import lombok.Getter;
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
+import java.util.UUID;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.LocalDate;
-import java.time.ZonedDateTime;
-import java.util.UUID;
+import com.api.v1.dtos.CustomerUpdatingRequestDto;
+
+import lombok.Getter;
 
 @Getter
 @Document(collection = "v1_customers")
@@ -27,7 +29,7 @@ public class Customer {
     private String lastName;
 
     @Field
-    private final String ssn;
+    private String ssn;
 
     @Field
     private LocalDate birthDate;

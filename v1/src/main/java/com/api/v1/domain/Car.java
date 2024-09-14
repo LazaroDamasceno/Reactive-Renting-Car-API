@@ -1,15 +1,17 @@
 package com.api.v1.domain;
 
-import com.api.v1.dtos.CarUpdatingRequestDto;
-import lombok.Getter;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
-import org.springframework.data.mongodb.core.mapping.Field;
-
 import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.UUID;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
+import com.api.v1.dtos.CarUpdatingRequestDto;
+
+import lombok.Getter;
 
 @Getter
 @Document(collection = "v1_cars")
@@ -34,7 +36,7 @@ public class Car {
     private String plateNumber;
 
     @Field
-    private final String addedAt;
+    private String addedAt;
 
     @Field
     private String updatedAt;
