@@ -10,7 +10,7 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class AllPaymentRetrievalTest {
+private class AllPaymentRetrievalTest {
 
     @Autowired
     lateinit var webTestClient: WebTestClient
