@@ -10,27 +10,27 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-private class PaymentDeletionByOrderNumberTest {
+class AllPaymentRetrievalTest {
 
     @Autowired
     lateinit var webTestClient: WebTestClient
 
     @Test
     @Order(1)
-    fun testSuccessfulAllDeletion() {
+    fun testSuccessfulAllPaymentsRetrieval() {
         webTestClient
-            .delete()
-            .uri("api/v1/payments/${20240001}")
+            .get()
+            .uri("api/v1/payments")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
     }
 
     @Test
-    fun testUnsuccessfulAllDeletion() {
+    fun testUnsuccessfulAllPaymentsRetrieval() {
         webTestClient
-            .delete()
-            .uri("api/v1/payments/${20240001}")
+            .get()
+            .uri("api/v1/payments")
             .exchange()
             .expectStatus()
             .is5xxServerError()
