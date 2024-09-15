@@ -19,7 +19,7 @@ public class RentDeletionByOrderNumberTest {
     @Order(1)
     void testSuccessfulDeletionByOrderNumber() {
         webTestClient
-                .get()
+                .delete()
                 .uri("api/v1/rents/%08d".formatted(20240001))
                 .exchange()
                 .expectStatus()
@@ -29,7 +29,7 @@ public class RentDeletionByOrderNumberTest {
     @Test
     void testUnsuccessfulDeletionByOrderNumber() {
         webTestClient
-                .get()
+                .delete()
                 .uri("api/v1/rents/%08d".formatted(20240000))
                 .exchange()
                 .expectStatus()
