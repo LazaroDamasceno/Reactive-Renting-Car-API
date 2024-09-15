@@ -4,8 +4,6 @@ import java.math.BigInteger;
 
 public record PaymentResponseDto(
         BigInteger orderNumber,
-        CustomerResponseDto customer,
-        CarResponseDto car,
         CreditCardResponseDto creditCard,
         String paidAt
 ) {

@@ -1,5 +1,7 @@
 package com.api.v1.controllers;
 
+import com.api.v1.annotations.SSN;
+import com.api.v1.annotations.VIN;
 import com.api.v1.dtos.RentResponseDto;
 import com.api.v1.services.RentRegistrationService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +19,8 @@ public class RentRegistrationController {
     @PostMapping("{ssn}/{vin}/{paymentOrderNumber}")
     @ResponseStatus(value = HttpStatus.CREATED)
     public Mono<RentResponseDto> register(
-            @PathVariable String ssn,
-            @PathVariable String vin,
+            @PathVariable @SSN String ssn,
+            @PathVariable @VIN String vin,
             @PathVariable String paymentOrderNumber
     ) {
         return service.register(ssn, vin, paymentOrderNumber);
