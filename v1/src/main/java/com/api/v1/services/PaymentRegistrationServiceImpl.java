@@ -45,7 +45,7 @@ class PaymentRegistrationServiceImpl implements PaymentRegistrationService {
                             .build();
                     return repository.save(payment)
                             .flatMap(savedPayment -> Mono.just(
-                                    new PaymentResponseMapper(savedPayment, customer, car, creditCard).map()));
+                                    new PaymentResponseMapper(savedPayment, creditCard).map()));
                 });
     }
 

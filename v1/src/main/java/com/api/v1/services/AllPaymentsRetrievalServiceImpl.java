@@ -31,8 +31,6 @@ class AllPaymentsRetrievalServiceImpl implements AllPaymentsRetrievalService {
                             .flatMap(payment -> Mono.just(
                                     new PaymentResponseMapper(
                                             payment,
-                                            payment.getCustomer(),
-                                            payment.getCar(),
                                             payment.getCreditCard())
                                             .map()
                             ));
