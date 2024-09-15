@@ -18,7 +18,7 @@ private class AllPaymentRetrievalTest {
     fun testSuccessfulAllPaymentsRetrieval() {
         webTestClient
             .get()
-            .uri("api/v1/payments")
+            .uri("api/v2/payments")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()

@@ -20,7 +20,7 @@ private class AllPaymentsDeletionTest {
     fun testSuccessfulAllPaymentsDeletion() {
         webTestClient
             .delete()
-            .uri("api/v1/payments")
+            .uri("api/v2/payments")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -30,7 +30,7 @@ private class AllPaymentsDeletionTest {
     fun testUnsuccessfulAllPaymentsDeletion() {
         webTestClient
             .delete()
-            .uri("api/v1/payments")
+            .uri("api/v2/payments")
             .exchange()
             .expectStatus()
             .is5xxServerError()
