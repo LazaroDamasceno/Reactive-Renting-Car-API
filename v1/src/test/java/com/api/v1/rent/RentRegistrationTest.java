@@ -14,7 +14,7 @@ import org.springframework.test.web.reactive.server.WebTestClient;
 import java.time.LocalDate;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@TestMethodOrder((MethodOrderer.OrderAnnotation.class))
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class RentRegistrationTest {
 
     @Autowired
