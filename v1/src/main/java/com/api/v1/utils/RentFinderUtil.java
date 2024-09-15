@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Mono;
 
+import java.math.BigInteger;
+
 @Component
 public class RentFinderUtil {
 
@@ -16,7 +18,7 @@ public class RentFinderUtil {
     public Mono<Rent> find(String orderNumber) {
         return repository.
                 findAll()
-                .filter(e -> e.getOrderNumber().equals(orderNumber))
+                .filter(e -> e.getOrderNumber().equals(new BigInteger(orderNumber)))
                 .singleOrEmpty()
                 .switchIfEmpty(Mono.error(new RentNotFoundException(orderNumber)));
     }
