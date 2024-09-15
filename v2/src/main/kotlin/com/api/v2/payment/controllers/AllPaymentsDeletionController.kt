@@ -1,6 +1,6 @@
 package com.api.v2.payment.controllers
 
-import AllPaymentsDeletionService
+import com.api.v2.payment.services.AllPaymentsDeletionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus.*
 import org.springframework.web.bind.annotation.*
