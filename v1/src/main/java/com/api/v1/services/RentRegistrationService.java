@@ -1,6 +1,5 @@
 package com.api.v1.services;
 
-import com.api.v1.domain.Rent;
 import com.api.v1.dtos.RentResponseDto;
 import reactor.core.publisher.Mono;
 
