@@ -1,3 +1,11 @@
+import com.api.v2.payment.domain.PaymentRepository
+import com.api.v2.payment.utils.PaymentFinderUtil
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
+import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.stereotype.Service
+
+@Service
 private class AllPaymentsDeletionServiceImpl: AllPaymentsDeletionService {
 
     @Autowired
