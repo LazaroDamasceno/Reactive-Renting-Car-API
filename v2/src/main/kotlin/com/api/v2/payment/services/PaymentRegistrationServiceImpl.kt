@@ -34,7 +34,7 @@ private class PaymentRegistrationServiceImpl: PaymentRegistrationService {
             val creditCard = creditCardFinderUtil.find(cardNumber)
             val payment = Payment(customer, car, creditCard)
             val savedPayment = paymentRepository.save(payment)
-            PaymentResponseMapper.map(savedPayment, customer, car, creditCard)
+            PaymentResponseMapper.map(savedPayment, creditCard)
         }
     }
 

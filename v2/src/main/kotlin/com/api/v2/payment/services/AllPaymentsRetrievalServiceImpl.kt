@@ -29,7 +29,7 @@ private class AllPaymentsRetrievalServiceImpl: AllPaymentsRetrievalService {
             }
             paymentRepository
                 .findAll()
-                .map { e -> PaymentResponseMapper.map(e, e.customer, e.car, e.creditCard) }
+                .map { e -> PaymentResponseMapper.map(e, e.creditCard) }
         }
 
     }
@@ -37,11 +37,7 @@ private class AllPaymentsRetrievalServiceImpl: AllPaymentsRetrievalService {
     override suspend fun findByOrderNumber(orderNumber: String): PaymentResponseDto {
         return withContext(Dispatchers.IO) {
             val payment = paymentFinderUtil.find(orderNumber)
-            PaymentResponseMapper.map(
-                payment,
-                payment.customer,
-                payment.car,
-                payment.creditCard)
+            PaymentResponseMapper.map(payment, payment.creditCard)
         }
     }
 
