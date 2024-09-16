@@ -3,6 +3,7 @@ package com.api.v2.rent
 import com.api.v2.car.domain.Car
 import com.api.v2.customer.domain.Customer
 import com.api.v2.payment.domain.Payment
+import com.api.v2.payment.utils.PaymentOrderGeneratorUtil
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigInteger
@@ -20,13 +21,12 @@ data class Rent(
 ) {
 
     constructor(
-        orderNumber: BigInteger,
         customer: Customer,
         car: Car,
         payment: Payment
     ) : this(
         UUID.randomUUID(),
-        orderNumber,
+        PaymentOrderGeneratorUtil.generate(),
         customer,
         car,
         payment,
