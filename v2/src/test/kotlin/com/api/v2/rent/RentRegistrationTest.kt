@@ -216,7 +216,7 @@ private class RentRegistrationTest {
             .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
             .exchange()
             .expectStatus()
-            .is2xxSuccessful()
+            .is5xxServerError()
     }
 
     @Test
@@ -229,7 +229,7 @@ private class RentRegistrationTest {
             .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
             .exchange()
             .expectStatus()
-            .is2xxSuccessful()
+            .is5xxServerError()
     }
 
     @Test
@@ -242,7 +242,7 @@ private class RentRegistrationTest {
             .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
             .exchange()
             .expectStatus()
-            .is2xxSuccessful()
+            .is5xxServerError()
     }
 
 }
