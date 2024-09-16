@@ -18,9 +18,10 @@ private class RentRetrievalByOrderNumberTest {
     @Test
     @Order(1)
     fun testSuccessfulRetrieval() {
+        val orderNumber = "20240001"
         webTestClient
             .get()
-            .uri("api/v2/rents/${2024001}")
+            .uri("api/v2/rents/$orderNumber")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -28,9 +29,10 @@ private class RentRetrievalByOrderNumberTest {
 
     @Test
     fun testUnsuccessfulRetrieval() {
+        val orderNumber = "20240000"
         webTestClient
             .get()
-            .uri("api/v2/rents/${2024000}")
+            .uri("api/v2/rents/$orderNumber")
             .exchange()
             .expectStatus()
             .is5xxServerError()
