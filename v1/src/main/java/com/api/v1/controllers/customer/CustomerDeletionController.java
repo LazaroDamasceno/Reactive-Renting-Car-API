@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.customer;
 
 import com.api.v1.annotations.customer.SSN;
 import com.api.v1.services.customer.CustomerDeletionService;

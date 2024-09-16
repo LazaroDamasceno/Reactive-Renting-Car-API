@@ -1,17 +1,17 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.creditcard;
 
-import com.api.v1.services.rent.AllRentsDeletionService;
+import com.api.v1.services.creditcard.AllCreditCardsDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("api/v1/rents")
-public class AllRentsDeletionController {
+@RequestMapping("api/v1/credit-cards")
+public class AllCreditCardsDeletionController {
 
     @Autowired
-    private AllRentsDeletionService service;
+    private AllCreditCardsDeletionService service;
 
     @DeleteMapping
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
@@ -19,9 +19,9 @@ public class AllRentsDeletionController {
         return service.deleteAll();
     }
 
-    @DeleteMapping("{orderNumber}")
+    @DeleteMapping("{cardNumber}")
     @ResponseStatus(value = HttpStatus.NO_CONTENT)
-    public Mono<Void> deleteByOrderNumber(@PathVariable String orderNumber) {
-        return service.deleteByOrderNumber(orderNumber);
+    public Mono<Void> deleteByCardNumber(@PathVariable String cardNumber) {
+        return service.deleteByCardNumber(cardNumber);
     }
 }

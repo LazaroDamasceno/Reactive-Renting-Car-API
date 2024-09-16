@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.creditcard;
 
 import com.api.v1.dtos.creditcard.CreditCardResponseDto;
 import com.api.v1.services.creditcard.AllCreditCardsRetrievalService;

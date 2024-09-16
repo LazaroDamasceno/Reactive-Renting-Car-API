@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.payment;
 
 import com.api.v1.dtos.payment.PaymentResponseDto;
 import com.api.v1.services.payment.PaymentRegistrationService;

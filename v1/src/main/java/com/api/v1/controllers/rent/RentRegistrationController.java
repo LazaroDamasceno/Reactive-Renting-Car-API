@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.rent;
 
 import com.api.v1.annotations.customer.SSN;
 import com.api.v1.annotations.car.VIN;

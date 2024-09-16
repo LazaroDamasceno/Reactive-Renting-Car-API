@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.car;
 
 import com.api.v1.annotations.car.VIN;
 import com.api.v1.services.car.AllCarsDeletionService;

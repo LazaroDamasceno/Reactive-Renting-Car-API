@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.rent;
 
 import com.api.v1.services.rent.RentTerminationService;
 import org.springframework.beans.factory.annotation.Autowired;

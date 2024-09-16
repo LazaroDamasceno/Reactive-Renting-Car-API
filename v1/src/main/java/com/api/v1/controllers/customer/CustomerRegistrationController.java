@@ -1,4 +1,4 @@
-package com.api.v1.controllers;
+package com.api.v1.controllers.customer;
 
 import com.api.v1.dtos.customer.CustomerRegistrationRequestDto;
 import com.api.v1.dtos.customer.CustomerResponseDto;
