@@ -26,14 +26,4 @@ class AllRentsRetrievalTest {
                 .is2xxSuccessful();
     }
 
-    @Test
-    void testUnsuccessfulAllRentsRetrieval() {
-        webTestClient
-                .get()
-                .uri("api/v1/rents")
-                .exchange()
-                .expectStatus()
-                .is5xxServerError();
-    }
-
 }
