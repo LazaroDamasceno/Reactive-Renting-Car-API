@@ -5,6 +5,6 @@ import reactor.core.publisher.Mono;
 
 public interface RentRegistrationService {
 
-    Mono<RentResponseDto> register(String ssn, String vin, String paymentOrderNumber);
+    Mono<RentResponseDto> register(String ssn, String vin, String paymentOrderNumber, int days);
 
 }

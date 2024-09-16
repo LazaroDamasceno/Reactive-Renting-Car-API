@@ -32,7 +32,8 @@ class RentRegistrationServiceImpl implements RentRegistrationService {
     public Mono<RentResponseDto> register(
             @SSN String ssn,
             @VIN String vin,
-            String paymentOrderNumber
+            String paymentOrderNumber,
+            int days
     ) {
         Mono<Customer> customerMono = customerFinderUtil.find(ssn);
         Mono<Car> carMono = carFinderUtil.find(vin);
@@ -47,6 +48,7 @@ class RentRegistrationServiceImpl implements RentRegistrationService {
                             .withCar(car)
                             .withCustomer(customer)
                             .withPayment(payment)
+                            .withDays(days)
                             .build();
                     return repository
                             .save(rent)

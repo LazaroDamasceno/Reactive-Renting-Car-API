@@ -44,8 +44,30 @@ public class Rent {
     @Field
     private String rentedAt;
 
+    public Rent(
+            UUID id,
+            BigInteger orderNumber,
+            Customer customer,
+            Car car,
+            Payment payment,
+            int days,
+            BigDecimal price,
+            String returningDate,
+            String rentedAt
+    ) {
+        this.id = id;
+        this.orderNumber = orderNumber;
+        this.customer = customer;
+        this.car = car;
+        this.payment = payment;
+        this.days = days;
+        this.price = price;
+        this.returningDate = returningDate;
+        this.rentedAt = rentedAt;
+    }
+
     public void terminate() {
-        this.rentedAt = ZonedDateTime.now().toString();
+        this.returnedAt = ZonedDateTime.now().toString();
     }
 
 }

@@ -19,6 +19,10 @@ public record RentResponseMapper(
                 new CustomerResponseMapper(customer).mapToDto(),
                 new CarResponseMapper(car).mapToDto(),
                 new PaymentResponseMapper(payment, payment.getCreditCard()).map(),
+                rent.getDays(),
+                rent.getPrice(),
+                rent.getReturningDate(),
+                rent.getReturnedAt(),
                 rent.getRentedAt()
         );
     }

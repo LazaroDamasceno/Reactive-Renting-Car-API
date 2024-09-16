@@ -1,5 +1,6 @@
 package com.api.v1.dtos;
 
+import java.math.BigDecimal;
 import java.math.BigInteger;
 
 public record RentResponseDto(
@@ -7,6 +8,10 @@ public record RentResponseDto(
         CustomerResponseDto customer,
         CarResponseDto car,
         PaymentResponseDto payment,
+        int days,
+        BigDecimal price,
+        String returningDate,
+        String returnedAt,
         String rentedAt
 ) {
 }

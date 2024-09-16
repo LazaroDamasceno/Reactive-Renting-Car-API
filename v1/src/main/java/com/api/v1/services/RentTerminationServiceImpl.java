@@ -21,10 +21,11 @@ class RentTerminationServiceImpl implements RentTerminationService {
         return rentFinderUtil
                 .find(orderNumber)
                 .flatMap(rent -> {
-                    if (rent.getRentedAt() == null) {
+                    if (rent.getReturnedAt() != null) {
                         return Mono.error(new TerminatedRentException(orderNumber));
                     }
-                    return repository.delete(rent);
+                    rent.terminate();
+                    return repository.save(rent);
                 })
                 .then();
     }

@@ -16,13 +16,14 @@ public class RentRegistrationController {
     @Autowired
     private RentRegistrationService service;
 
-    @PostMapping("{ssn}/{vin}/{paymentOrderNumber}")
+    @PostMapping("{ssn}/{vin}/{paymentOrderNumber}/{days}")
     @ResponseStatus(value = HttpStatus.CREATED)
     public Mono<RentResponseDto> register(
             @PathVariable @SSN String ssn,
             @PathVariable @VIN String vin,
-            @PathVariable String paymentOrderNumber
+            @PathVariable String paymentOrderNumber,
+            @PathVariable int days
     ) {
-        return service.register(ssn, vin, paymentOrderNumber);
+        return service.register(ssn, vin, paymentOrderNumber, days);
     }
 }

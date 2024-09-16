@@ -199,9 +199,10 @@ class RentRegistrationTest {
         var ssn = "123456789";
         var vin = "12345678901234567";
         var paymentOrderNumber = "20240001";
+        var days = 100;
         webTestClient
                 .post()
-                .uri("api/v1/rents/%s/%s/%s".formatted(ssn, vin, paymentOrderNumber))
+                .uri("api/v1/rents/%s/%s/%s/%s".formatted(ssn, vin, paymentOrderNumber, days))
                 .exchange()
                 .expectStatus()
                 .is2xxSuccessful();

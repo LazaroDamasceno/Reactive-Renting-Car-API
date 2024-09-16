@@ -5,6 +5,7 @@ import com.api.v1.domain.Customer;
 import com.api.v1.domain.Payment;
 import com.api.v1.domain.Rent;
 import com.api.v1.utils.RentOrderNumberGeneratorUtil;
+import com.api.v1.utils.RentPriceSetterUtil;
 
 import java.math.BigInteger;
 import java.time.ZonedDateTime;
@@ -17,6 +18,7 @@ public class RentBuilder {
     private Customer customer;
     private Car car;
     private Payment payment;
+    private int days;
     private final String rentedAt = ZonedDateTime.now().toString();
 
     private RentBuilder() {}
@@ -40,6 +42,11 @@ public class RentBuilder {
         return this;
     }
 
+    public RentBuilder withDays(int days) {
+        this.days = days;
+        return this;
+    }
+
     public Rent build() {
         return new Rent(
                 id,
@@ -47,7 +54,10 @@ public class RentBuilder {
                 customer,
                 car,
                 payment,
-                rentedAt
+                days,
+                RentPriceSetterUtil.set(days),
+                ZonedDateTime.now().plusDays(days).toString(),
+                ZonedDateTime.now().toString()
         );
     }
 
