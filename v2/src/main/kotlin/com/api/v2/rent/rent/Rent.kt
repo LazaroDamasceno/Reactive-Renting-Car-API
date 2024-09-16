@@ -6,6 +6,7 @@ import com.api.v2.payment.domain.Payment
 import org.springframework.data.annotation.Id
 import org.springframework.data.mongodb.core.mapping.Document
 import java.math.BigInteger
+import java.time.ZonedDateTime
 import java.util.*
 
 @Document(collection = "v2_rents")
@@ -16,4 +17,20 @@ data class Rent(
     val car: Car,
     val payment: Payment,
     val rentedAt: String
-)
+) {
+
+    constructor(
+        orderNumber: BigInteger,
+        customer: Customer,
+        car: Car,
+        payment: Payment
+    ) : this(
+        UUID.randomUUID(),
+        orderNumber,
+        customer,
+        car,
+        payment,
+        ZonedDateTime.now().toString()
+    )
+
+}
