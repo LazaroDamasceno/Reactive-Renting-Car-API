@@ -1,4 +1,4 @@
-package com.api.v2.rent
+package com.api.v2.rent.controllers
 
 import com.api.v2.rent.dtos.RentResponseDto
 import com.api.v2.rent.service.RentRegistrationService
