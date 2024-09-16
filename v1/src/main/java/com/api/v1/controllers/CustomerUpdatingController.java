@@ -1,9 +1,9 @@
 package com.api.v1.controllers;
 
-import com.api.v1.annotations.SSN;
-import com.api.v1.dtos.CustomerResponseDto;
-import com.api.v1.dtos.CustomerUpdatingRequestDto;
-import com.api.v1.services.CustomerUpdatingService;
+import com.api.v1.annotations.customer.SSN;
+import com.api.v1.dtos.customer.CustomerResponseDto;
+import com.api.v1.dtos.customer.CustomerUpdatingRequestDto;
+import com.api.v1.services.customer.CustomerUpdatingService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
 package com.api.v1.controllers;
 
-import com.api.v1.annotations.VIN;
-import com.api.v1.services.AllCarsDeletionService;
+import com.api.v1.annotations.car.VIN;
+import com.api.v1.services.car.AllCarsDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

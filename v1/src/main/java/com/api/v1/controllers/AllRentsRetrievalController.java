@@ -1,7 +1,7 @@
 package com.api.v1.controllers;
 
-import com.api.v1.dtos.RentResponseDto;
-import com.api.v1.services.AllRentsRetrievalService;
+import com.api.v1.dtos.rent.RentResponseDto;
+import com.api.v1.services.rent.AllRentsRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

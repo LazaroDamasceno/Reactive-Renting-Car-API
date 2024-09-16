@@ -1,8 +1,8 @@
 package com.api.v1.rent;
 
-import com.api.v1.dtos.CarRegistrationRequestDto;
-import com.api.v1.dtos.CreditCardRegistrationRequestDto;
-import com.api.v1.dtos.CustomerRegistrationRequestDto;
+import com.api.v1.dtos.car.CarRegistrationRequestDto;
+import com.api.v1.dtos.creditcard.CreditCardRegistrationRequestDto;
+import com.api.v1.dtos.customer.CustomerRegistrationRequestDto;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;

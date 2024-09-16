@@ -1,7 +1,7 @@
 package com.api.v1.controllers;
 
-import com.api.v1.dtos.PaymentResponseDto;
-import com.api.v1.services.AllPaymentsRetrievalService;
+import com.api.v1.dtos.payment.PaymentResponseDto;
+import com.api.v1.services.payment.AllPaymentsRetrievalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

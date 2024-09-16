@@ -1,8 +1,8 @@
 package com.api.v1.controllers;
 
-import com.api.v1.annotations.SSN;
-import com.api.v1.dtos.CustomerResponseDto;
-import com.api.v1.services.AllCustomersRetrievingService;
+import com.api.v1.annotations.customer.SSN;
+import com.api.v1.dtos.customer.CustomerResponseDto;
+import com.api.v1.services.customer.AllCustomersRetrievingService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

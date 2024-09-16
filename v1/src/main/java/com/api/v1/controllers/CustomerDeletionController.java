@@ -1,7 +1,7 @@
 package com.api.v1.controllers;
 
-import com.api.v1.annotations.SSN;
-import com.api.v1.services.CustomerDeletionService;
+import com.api.v1.annotations.customer.SSN;
+import com.api.v1.services.customer.CustomerDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

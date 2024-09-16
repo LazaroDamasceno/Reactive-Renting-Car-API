@@ -1,8 +1,8 @@
 package com.api.v1.controllers;
 
-import com.api.v1.dtos.CarRegistrationRequestDto;
-import com.api.v1.dtos.CarResponseDto;
-import com.api.v1.services.CarRegistrationService;
+import com.api.v1.dtos.car.CarRegistrationRequestDto;
+import com.api.v1.dtos.car.CarResponseDto;
+import com.api.v1.services.car.CarRegistrationService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
 package com.api.v1.controllers;
 
-import com.api.v1.services.AllRentsDeletionService;
+import com.api.v1.services.rent.AllRentsDeletionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
