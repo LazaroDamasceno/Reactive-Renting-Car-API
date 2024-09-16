@@ -14,13 +14,14 @@ class RentRegistrationController {
     private lateinit var service: RentRegistrationService
 
     @ResponseStatus(value = HttpStatus.CREATED)
-    @PostMapping("{ssn}/{vin}/{paymentOrderNumber}")
+    @PostMapping("{ssn}/{vin}/{paymentOrderNumber}/{days}")
     suspend fun register(
         @PathVariable ssn: String,
         @PathVariable vin: String,
-        @PathVariable paymentOrderNumber: String
+        @PathVariable paymentOrderNumber: String,
+        @PathVariable days: Long
     ): RentResponseDto {
-        return service.register(ssn, vin, paymentOrderNumber)
+        return service.register(ssn, vin, paymentOrderNumber, days)
     }
 
 }

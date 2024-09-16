@@ -30,13 +30,14 @@ private class RentRegistrationServiceImpl: RentRegistrationService {
     override suspend fun register(
         ssn: String,
         vin: String,
-        paymentOrderNumber: String
+        paymentOrderNumber: String,
+        days: Long
     ): RentResponseDto {
         return withContext(Dispatchers.IO) {
             val customer = customerFinderUtil.find(ssn)
             val car = carFinderUtil.find(vin)
             val payment = paymentFinderUtil.find(paymentOrderNumber)
-            val rent = Rent(customer, car, payment)
+            val rent = Rent(customer, car, payment, days)
             val savedRent = rentRepository.save(rent)
             RentResponseMapper.map(savedRent, customer, car, payment)
         }

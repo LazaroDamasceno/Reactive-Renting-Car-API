@@ -198,9 +198,10 @@ private class RentRegistrationTest {
         val ssn = "123456789"
         val vin = "12345678901234567"
         val paymentOrderNumber = "20240001"
+        val days = 100
         webTestClient
             .post()
-            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
+            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber/$days")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -211,9 +212,10 @@ private class RentRegistrationTest {
         val ssn = "123456788"
         val vin = "12345678901234567"
         val paymentOrderNumber = "20240001"
+        val days = 100
         webTestClient
             .post()
-            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
+            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber/$days")
             .exchange()
             .expectStatus()
             .is5xxServerError()
@@ -224,9 +226,10 @@ private class RentRegistrationTest {
         val ssn = "123456789"
         val vin = "12345678901234566"
         val paymentOrderNumber = "20240001"
+        val days = 100
         webTestClient
             .post()
-            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
+            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber/$days")
             .exchange()
             .expectStatus()
             .is5xxServerError()
@@ -237,9 +240,10 @@ private class RentRegistrationTest {
         val ssn = "123456789"
         val vin = "12345678901234567"
         val paymentOrderNumber = "20240000"
+        val days = 100
         webTestClient
             .post()
-            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber")
+            .uri("api/v2/rents/$ssn/$vin/$paymentOrderNumber/$days")
             .exchange()
             .expectStatus()
             .is5xxServerError()
