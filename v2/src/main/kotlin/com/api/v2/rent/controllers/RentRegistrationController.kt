@@ -7,7 +7,7 @@ import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.*
 
 @RestController
-@RequestMapping("api/v1/rents")
+@RequestMapping("api/v2/rents")
 class RentRegistrationController {
 
     @Autowired
