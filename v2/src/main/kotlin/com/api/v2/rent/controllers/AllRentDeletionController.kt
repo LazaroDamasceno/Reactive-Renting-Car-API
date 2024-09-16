@@ -1,6 +1,5 @@
 package com.api.v2.rent.controllers
 
-import com.api.v2.rent.dtos.RentResponseDto
 import com.api.v2.rent.service.AllRentsDeletionService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
