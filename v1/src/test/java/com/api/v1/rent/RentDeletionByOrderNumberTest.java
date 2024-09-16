@@ -30,7 +30,7 @@ public class RentDeletionByOrderNumberTest {
     void testUnsuccessfulDeletionByOrderNumber() {
         webTestClient
                 .delete()
-                .uri("api/v1/rents/%08d".formatted(20240000))
+                .uri("api/v1/rents/%08d".formatted(20240001))
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();
