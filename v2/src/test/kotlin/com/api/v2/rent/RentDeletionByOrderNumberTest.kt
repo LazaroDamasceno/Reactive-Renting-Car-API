@@ -20,7 +20,7 @@ private class RentDeletionByOrderNumberTest {
     fun testSuccessfulDeletion() {
         webTestClient
             .delete()
-            .uri("api/v2/rents/${2024001}")
+            .uri("api/v2/rents/${20240001}")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -30,7 +30,7 @@ private class RentDeletionByOrderNumberTest {
     fun testUnsuccessfulDeletion() {
         webTestClient
             .delete()
-            .uri("api/v2/rents/${2024000}")
+            .uri("api/v2/rents/${20240000}")
             .exchange()
             .expectStatus()
             .is5xxServerError()
