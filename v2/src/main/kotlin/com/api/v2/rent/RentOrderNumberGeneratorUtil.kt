@@ -1,4 +1,4 @@
-package com.api.v2.rent.rent
+package com.api.v2.rent
 
 import java.math.BigInteger
 import java.time.ZonedDateTime
