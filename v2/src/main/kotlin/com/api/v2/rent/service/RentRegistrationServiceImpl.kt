@@ -34,6 +34,7 @@ private class RentRegistrationServiceImpl: RentRegistrationService {
         days: Long
     ): RentResponseDto {
         return withContext(Dispatchers.IO) {
+            //if (rentRepository.findAll().filter { e ->  })
             val customer = customerFinderUtil.find(ssn)
             val car = carFinderUtil.find(vin)
             val payment = paymentFinderUtil.find(paymentOrderNumber)

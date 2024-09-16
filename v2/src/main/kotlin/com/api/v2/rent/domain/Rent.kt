@@ -21,7 +21,9 @@ data class Rent(
     val payment: Payment,
     val days: Long,
     val price: BigDecimal,
-    val rentedAt: String
+    val returningDate: String,
+    var returnedAt: String,
+    var rentedAt: String
 ) {
 
     constructor(
@@ -37,7 +39,14 @@ data class Rent(
         payment,
         days,
         RentPriceSetterUtil.setPrice(days),
+        ZonedDateTime.now().plusDays(days).toString(),
+        "",
         ZonedDateTime.now().toString()
     )
+
+    fun markAsReturned(): Rent {
+        returnedAt = ZonedDateTime.now().toString()
+        return this
+    }
 
 }

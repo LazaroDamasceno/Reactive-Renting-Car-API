@@ -10,27 +10,29 @@ import org.springframework.test.web.reactive.server.WebTestClient
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation::class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-private class RentDeletionByOrderNumberTest {
+private class RentTerminationByOrderNumberTest {
 
     @Autowired
     lateinit var webTestClient: WebTestClient
 
     @Test
     @Order(1)
-    fun testSuccessfulDeletion() {
+    fun testSuccessfulTermination() {
+        val orderNumber = "20240001"
         webTestClient
-            .delete()
-            .uri("api/v2/rents/${20240001}")
+            .patch()
+            .uri("api/v2/rents/$orderNumber")
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
     }
 
     @Test
-    fun testUnsuccessfulDeletion() {
+    fun testUnsuccessfulTermination() {
+        val orderNumber = "20240001"
         webTestClient
-            .delete()
-            .uri("api/v2/rents/${20240001}")
+            .patch()
+            .uri("api/v2/rents/$orderNumber")
             .exchange()
             .expectStatus()
             .is5xxServerError()

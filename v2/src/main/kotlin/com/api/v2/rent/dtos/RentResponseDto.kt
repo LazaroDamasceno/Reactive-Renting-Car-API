@@ -12,5 +12,7 @@ data class RentResponseDto(
     val car: CarResponseDto,
     val payment: PaymentResponseDto,
     val price: BigDecimal,
+    val returningDate: String,
+    var returnedAt: String,
     val rentedAt: String
 )
