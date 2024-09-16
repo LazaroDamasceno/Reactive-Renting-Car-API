@@ -18,6 +18,7 @@ class RentResponseMapper {
                 CustomerResponseMapper.mapToDto(customer),
                 CarResponseMapper.mapToDto(car),
                 PaymentResponseMapper.map(payment, payment.creditCard),
+                rent.price,
                 rent.rentedAt
             )
         }

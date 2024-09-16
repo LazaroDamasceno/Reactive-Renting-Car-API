@@ -3,6 +3,7 @@ package com.api.v2.rent.dtos
 import com.api.v2.car.dtos.CarResponseDto
 import com.api.v2.customer.dtos.CustomerResponseDto
 import com.api.v2.payment.dtos.PaymentResponseDto
+import java.math.BigDecimal
 import java.math.BigInteger
 
 data class RentResponseDto(
@@ -10,5 +11,6 @@ data class RentResponseDto(
     val customer: CustomerResponseDto,
     val car: CarResponseDto,
     val payment: PaymentResponseDto,
+    val price: BigDecimal,
     val rentedAt: String
 )
