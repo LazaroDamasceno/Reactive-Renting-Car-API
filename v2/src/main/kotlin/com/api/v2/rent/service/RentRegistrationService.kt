@@ -1,4 +1,6 @@
-package com.api.v2.rent
+package com.api.v2.rent.service
+
+import com.api.v2.rent.dtos.RentResponseDto
 
 interface RentRegistrationService {
 

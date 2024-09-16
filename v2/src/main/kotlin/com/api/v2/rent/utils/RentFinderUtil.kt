@@ -1,5 +1,8 @@
-package com.api.v2.rent
+package com.api.v2.rent.utils
 
+import com.api.v2.rent.exceptions.RentNotFoundException
+import com.api.v2.rent.domain.Rent
+import com.api.v2.rent.domain.RentRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.singleOrNull

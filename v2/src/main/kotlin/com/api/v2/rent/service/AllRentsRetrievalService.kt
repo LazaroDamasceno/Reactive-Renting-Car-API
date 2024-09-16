@@ -1,5 +1,6 @@
-package com.api.v2.rent
+package com.api.v2.rent.service
 
+import com.api.v2.rent.dtos.RentResponseDto
 import kotlinx.coroutines.flow.Flow
 
 interface AllRentsRetrievalService {

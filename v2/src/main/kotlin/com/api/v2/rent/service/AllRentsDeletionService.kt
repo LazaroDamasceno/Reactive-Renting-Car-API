@@ -1,4 +1,4 @@
-package com.api.v2.rent
+package com.api.v2.rent.service
 
 interface AllRentsDeletionService {
 

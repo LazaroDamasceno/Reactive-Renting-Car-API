@@ -1,5 +1,8 @@
-package com.api.v2.rent
+package com.api.v2.rent.service
 
+import com.api.v2.rent.exceptions.EmptyRentEntityException
+import com.api.v2.rent.domain.RentRepository
+import com.api.v2.rent.utils.RentFinderUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.count
 import kotlinx.coroutines.withContext

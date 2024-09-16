@@ -1,4 +1,4 @@
-package com.api.v2.rent
+package com.api.v2.rent.dtos
 
 import com.api.v2.car.dtos.CarResponseDto
 import com.api.v2.customer.dtos.CustomerResponseDto
