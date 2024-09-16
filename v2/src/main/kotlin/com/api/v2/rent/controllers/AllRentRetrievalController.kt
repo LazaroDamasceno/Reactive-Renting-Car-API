@@ -14,13 +14,13 @@ class AllRentRetrievalController {
     @Autowired
     private lateinit var service: AllRentsRetrievalService
 
-    @DeleteMapping
+    @GetMapping
     @ResponseStatus(value = HttpStatus.OK)
     suspend fun findAll(): Flow<RentResponseDto> {
         return service.findAll()
     }
 
-    @DeleteMapping("{orderNumber}")
+    @GetMapping("{orderNumber}")
     @ResponseStatus(value = HttpStatus.OK)
     suspend fun findByOrderNumber(@PathVariable orderNumber: String): RentResponseDto {
         return service.findByOrderNumber(orderNumber)
