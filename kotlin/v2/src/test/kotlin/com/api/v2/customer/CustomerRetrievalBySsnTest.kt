@@ -31,7 +31,7 @@ private class CustomerRetrievalBySsnTest {
     fun testUnsuccessfulCustomerRetrieveBySsn() {
         webTestClient
             .get()
-            .uri("api/v2/customers/${123456789}")
+            .uri("api/v2/customers/${123456788}")
             .exchange()
             .expectStatus()
             .is5xxServerError()

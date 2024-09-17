@@ -18,6 +18,9 @@ private class AllPaymentsDeletionServiceImpl: AllPaymentsDeletionService {
 
     override suspend fun deleteAll() {
         withContext(Dispatchers.IO) {
+            if (paymentRepository.findAll().count() == 0) {
+
+            }
             paymentRepository.deleteAll()
         }
     }
