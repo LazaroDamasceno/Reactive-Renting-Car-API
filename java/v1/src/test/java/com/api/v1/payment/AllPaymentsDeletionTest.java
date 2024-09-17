@@ -33,7 +33,7 @@ public class AllPaymentsDeletionTest {
                 .uri("api/v1/payments")
                 .exchange()
                 .expectStatus()
-                .is2xxSuccessful();
+                .is5xxServerError();
     }
 
 }

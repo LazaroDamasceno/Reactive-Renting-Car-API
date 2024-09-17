@@ -30,7 +30,7 @@ public class PaymentRetrievalByOrderNumberTest {
     void testUnsuccessfulPaymentRetrievalByOrderNumber() {
         webTestClient
                 .get()
-                .uri("api/v1/payments/%s".formatted("20240001"))
+                .uri("api/v1/payments/%s".formatted("20240000"))
                 .exchange()
                 .expectStatus()
                 .is5xxServerError();
