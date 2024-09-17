@@ -23,8 +23,8 @@ private class CarUpdateServiceImpl: CarUpdateService {
     override suspend fun update(vin: String, requestDto: @Valid CarUpdateRequestDto): CarResponseDto {
         return withContext(Dispatchers.IO) {
             val existingCar = carFinderUtil.find(vin)
-            existingCar.update(requestDto)
-            val savedCar = carRepository.save(existingCar)
+            val updatedCar = existingCar.update(requestDto)
+            val savedCar = carRepository.save(updatedCar)
             CarResponseMapper.mapToDto(savedCar)
         }
     }

@@ -1,7 +1,7 @@
 package com.api.v2.car.controllers
 
+import com.api.v2.car.domain.Car
 import com.api.v2.car.services.CarRegistrationService
-import com.api.v2.car.dtos.CarRegistrationRequestDto
 import jakarta.validation.Valid
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.HttpStatus
@@ -20,8 +20,8 @@ class CarRegistrationController {
 
     @PostMapping
     @ResponseStatus(value = HttpStatus.CREATED)
-    suspend fun register(@RequestBody requestDto: @Valid CarRegistrationRequestDto) {
-        return service.register(requestDto)
+    suspend fun register(@RequestBody car: @Valid Car) {
+        return service.register(car)
     }
 
 }

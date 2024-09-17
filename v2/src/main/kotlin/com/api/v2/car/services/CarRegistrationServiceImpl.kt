@@ -1,8 +1,7 @@
 package com.api.v2.car.services
 
-import com.api.v2.car.builders.CarBuilder
+import com.api.v2.car.domain.Car
 import com.api.v2.car.domain.CarRepository
-import com.api.v2.car.dtos.CarRegistrationRequestDto
 import com.api.v2.car.exceptions.DuplicatedVinException
 import com.api.v2.car.mappers.CarResponseMapper
 import jakarta.validation.Valid
@@ -19,13 +18,12 @@ private class CarRegistrationServiceImpl: CarRegistrationService {
     @Autowired
     lateinit var carRepository: CarRepository
 
-    override suspend fun register(requestDto: @Valid CarRegistrationRequestDto) {
+    override suspend fun register(car: @Valid Car) {
         return withContext(Dispatchers.IO) {
-            if (checkTheExistenceOfDuplicatedVin(requestDto.vin)) {
-                throw DuplicatedVinException(requestDto.vin)
+            if (checkTheExistenceOfDuplicatedVin(car.vin)) {
+                throw DuplicatedVinException(car.vin)
             }
-            val newCar = CarBuilder.create().fromDto(requestDto).build()
-            val savedCar = carRepository.save(newCar)
+            val savedCar = carRepository.save(car)
             CarResponseMapper.mapToDto(savedCar)
         }
     }

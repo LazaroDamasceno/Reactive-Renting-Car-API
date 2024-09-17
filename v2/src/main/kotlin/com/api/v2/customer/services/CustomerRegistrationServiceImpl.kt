@@ -1,8 +1,7 @@
 package com.api.v2.customer.services
 
-import com.api.v2.customer.builders.CustomerBuilder
+import com.api.v2.customer.domain.Customer
 import com.api.v2.customer.domain.CustomerRepository
-import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
 import com.api.v2.customer.dtos.CustomerResponseDto
 import com.api.v2.customer.exceptions.DuplicatedSsnException
 import com.api.v2.customer.mappers.CustomerResponseMapper
@@ -19,13 +18,12 @@ private class CustomerRegistrationServiceImpl: CustomerRegistrationService {
     @Autowired
     lateinit var customerRepository: CustomerRepository
 
-    override suspend fun register(requestDto: @Valid CustomerRegistrationRequestDto): CustomerResponseDto {
+    override suspend fun register(requestDto: @Valid Customer): CustomerResponseDto {
         return withContext(Dispatchers.IO) {
             if (checkTheExistenceOfDuplicatedSsn(requestDto.ssn)) {
                 throw DuplicatedSsnException(requestDto.ssn)
             }
-            val newCustomer = CustomerBuilder.create().fromDto(requestDto).build()
-            val savedCustomer = customerRepository.save(newCustomer)
+            val savedCustomer = customerRepository.save(requestDto)
             CustomerResponseMapper.mapToDto(savedCustomer)
         }
     }

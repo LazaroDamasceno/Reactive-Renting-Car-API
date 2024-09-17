@@ -1,9 +1,9 @@
 package com.api.v2.car.services
 
-import com.api.v2.car.dtos.CarRegistrationRequestDto
+import com.api.v2.car.domain.Car
 
 interface CarRegistrationService {
 
-    suspend fun register(requestDto: CarRegistrationRequestDto)
+    suspend fun register(car: Car)
 
 }

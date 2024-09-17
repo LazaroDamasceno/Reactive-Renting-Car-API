@@ -23,8 +23,8 @@ private class CustomerUpdateServiceImpl: CustomerUpdateService {
     override suspend fun update(ssn: String, requestDto: @Valid CustomerUpdateRequestDto): CustomerResponseDto {
         return withContext(Dispatchers.IO) {
             val customer = customerFinderUtil.find(ssn)
-            customer.update(requestDto)
-            val savedCustomer = customerRepository.save(customer)
+            val updatedCustomer = customer.update(requestDto)
+            val savedCustomer = customerRepository.save(updatedCustomer)
             CustomerResponseMapper.mapToDto(savedCustomer)
         }
     }

@@ -7,25 +7,41 @@ import java.time.ZonedDateTime
 import java.util.UUID
 
 @Document(collection = "v2_cars")
-class Car(
-    @Id
-    val id: UUID,
+data class Car(
+    @Id val id: UUID,
     val vin: String,
     var model: String,
     var productionYear: String,
     var make: String,
     var plateNumber: String,
     val createdAt: String,
+    var updatedAt: String?
 ) {
 
-    var updatedAt: String? = null
+    constructor(
+        vin: String,
+        model: String,
+        productionYear: String,
+        make: String,
+        plateNumber: String,
+    ): this(
+        UUID.randomUUID(),
+        vin,
+        model,
+        productionYear,
+        make,
+        plateNumber,
+        ZonedDateTime.now().toString(),
+        null
+    )
 
-    fun update(requestDto: CarUpdateRequestDto) {
+    fun update(requestDto: CarUpdateRequestDto): Car {
         model = requestDto.model
         productionYear = requestDto.productionYear
         make = requestDto.make
         plateNumber = requestDto.plateNumber
         updatedAt = ZonedDateTime.now().toString()
+        return this
     }
 
 }

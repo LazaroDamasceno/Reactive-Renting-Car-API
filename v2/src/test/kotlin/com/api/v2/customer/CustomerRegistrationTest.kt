@@ -1,6 +1,6 @@
 package com.api.v2.customer
 
-import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
+import com.api.v2.customer.domain.Customer
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
@@ -17,7 +17,7 @@ private class CustomerRegistrationTest {
 	@Autowired
 	lateinit var webTestClient: WebTestClient
 
-	val requestDto = CustomerRegistrationRequestDto(
+	val requestDto = Customer(
 		"Leo",
 		"",
 		"Santos",

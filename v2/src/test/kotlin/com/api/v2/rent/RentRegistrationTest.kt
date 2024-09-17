@@ -1,8 +1,8 @@
 package com.api.v2.rent
 
-import com.api.v2.car.dtos.CarRegistrationRequestDto
+import com.api.v2.car.domain.Car
 import com.api.v2.creditcard.domain.CreditCard
-import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
+import com.api.v2.customer.domain.Customer
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
@@ -22,7 +22,7 @@ private class RentRegistrationTest {
     @Test
     @Order(1)
     fun testSuccessfulCustomerRegistration() {
-        val requestDto = CustomerRegistrationRequestDto(
+        val requestDto = Customer(
             "Leo",
             "",
             "Santos",
@@ -44,7 +44,7 @@ private class RentRegistrationTest {
     @Test
     @Order(2)
     fun testUnsuccessfulCustomerRegistration() {
-        val requestDto = CustomerRegistrationRequestDto(
+        val requestDto = Customer(
             "Leo",
             "",
             "Santos",
@@ -66,7 +66,7 @@ private class RentRegistrationTest {
     @Test
     @Order(3)
     fun testSuccessfulCarRegistration() {
-        val requestDto = CarRegistrationRequestDto(
+        val requestDto = Car(
             "12345678901234567",
             "RAM",
             "2024",
@@ -85,7 +85,7 @@ private class RentRegistrationTest {
     @Test
     @Order(4)
     fun testUnsuccessfulCarRegistration() {
-        val requestDto = CarRegistrationRequestDto(
+        val requestDto = Car(
             "12345678901234567",
             "RAM",
             "2024",

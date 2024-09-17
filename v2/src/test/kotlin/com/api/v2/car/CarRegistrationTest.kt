@@ -1,6 +1,6 @@
 package com.api.v2.car
 
-import com.api.v2.car.dtos.CarRegistrationRequestDto
+import com.api.v2.car.domain.Car
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
 import org.junit.jupiter.api.Test
@@ -16,7 +16,7 @@ private class CarRegistrationTest {
     @Autowired
     lateinit var webTestClient: WebTestClient
 
-    private val requestDto = CarRegistrationRequestDto(
+    private val car = Car(
         "12345678901234567",
         "RAM",
         "2024",
@@ -30,7 +30,7 @@ private class CarRegistrationTest {
         webTestClient
             .post()
             .uri("api/v2/cars")
-            .bodyValue(requestDto)
+            .bodyValue(car)
             .exchange()
             .expectStatus()
             .is2xxSuccessful()
@@ -42,7 +42,7 @@ private class CarRegistrationTest {
         webTestClient
             .post()
             .uri("api/v2/cars")
-            .bodyValue(requestDto)
+            .bodyValue(car)
             .exchange()
             .expectStatus()
             .is5xxServerError()

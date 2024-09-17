@@ -8,7 +8,7 @@ import java.time.ZonedDateTime
 import java.util.UUID
 
 @Document(collection = "v2_customers")
-class Customer(
+data class Customer(
     @Id
     val id: UUID,
     var firstName: String,
@@ -19,10 +19,32 @@ class Customer(
     var email: String,
     var phoneNumber: String,
     var gender: String,
-    val createdAt: String
+    val createdAt: String,
+    var updatedAt: String?
 ) {
 
-    var updatedAt: String? = null
+    constructor(
+        firstName: String,
+        middleName: String,
+        lastName: String,
+        ssn: String,
+        birthDate: LocalDate,
+        email: String,
+        phoneNumber: String,
+        gender: String
+    ): this(
+        UUID.randomUUID(),
+        firstName,
+        middleName,
+        lastName,
+        ssn,
+        birthDate,
+        email,
+        phoneNumber,
+        gender,
+        ZonedDateTime.now().toString(),
+        null
+    )
 
     fun fullName(): String {
         if (middleName.isEmpty()) {
@@ -31,7 +53,7 @@ class Customer(
         return "$firstName $middleName $lastName"
     }
 
-    fun update(requestDto: CustomerUpdateRequestDto) {
+    fun update(requestDto: CustomerUpdateRequestDto): Customer {
         firstName = requestDto.firstName
         middleName = requestDto.middleName
         lastName = requestDto.lastName
@@ -40,6 +62,7 @@ class Customer(
         phoneNumber = requestDto.phoneNumber
         gender = requestDto.gender
         updatedAt = ZonedDateTime.now().toString()
+        return this
     }
 
 }

@@ -1,8 +1,8 @@
 package com.api.v2.payment
 
-import com.api.v2.car.dtos.CarRegistrationRequestDto
+import com.api.v2.car.domain.Car
 import com.api.v2.creditcard.domain.CreditCard
-import com.api.v2.customer.dtos.CustomerRegistrationRequestDto
+import com.api.v2.customer.domain.Customer
 import org.junit.jupiter.api.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -20,7 +20,7 @@ private class PaymentRegistrationTest {
     @Test
     @Order(1)
     fun testSuccessfulCustomerRegistration() {
-        val requestDto = CustomerRegistrationRequestDto(
+        val requestDto = Customer(
             "Leo",
             "",
             "Santos",
@@ -42,7 +42,7 @@ private class PaymentRegistrationTest {
     @Test
     @Order(2)
     fun testUnsuccessfulCustomerRegistration() {
-        val requestDto = CustomerRegistrationRequestDto(
+        val requestDto = Customer(
             "Leo",
             "",
             "Santos",
@@ -64,7 +64,7 @@ private class PaymentRegistrationTest {
     @Test
     @Order(3)
     fun testSuccessfulCarRegistration() {
-        val requestDto = CarRegistrationRequestDto(
+        val requestDto = Car(
             "12345678901234567",
             "RAM",
             "2024",
@@ -83,7 +83,7 @@ private class PaymentRegistrationTest {
     @Test
     @Order(4)
     fun testUnsuccessfulCarRegistration() {
-        val requestDto = CarRegistrationRequestDto(
+        val requestDto = Car(
             "12345678901234567",
             "RAM",
             "2024",
