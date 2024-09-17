@@ -42,5 +42,5 @@ You can create on https://www.mongodb.com/pt-br/cloud/atlas/register. Follow the
 
 v1: https://youtu.be/tjV3xeTiG4g
 
-v2:
+v2: https://youtu.be/_FmtFB-Sjr0
 
