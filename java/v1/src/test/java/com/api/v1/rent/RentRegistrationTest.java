@@ -218,7 +218,7 @@ class RentRegistrationTest {
                 .uri("api/v1/rents/%s/%s/%s".formatted(ssn, vin, orderNumber))
                 .exchange()
                 .expectStatus()
-                .is5xxServerError();
+                .is4xxClientError();
     }
 
     @Test
@@ -231,7 +231,7 @@ class RentRegistrationTest {
                 .uri("api/v1/rents/%s/%s/%s".formatted(ssn, vin, orderNumber))
                 .exchange()
                 .expectStatus()
-                .is5xxServerError();
+                .is4xxClientError();
     }
 
     @Test
@@ -244,7 +244,7 @@ class RentRegistrationTest {
                 .uri("api/v1/rents/%s/%s/%s".formatted(ssn, vin, orderNumber))
                 .exchange()
                 .expectStatus()
-                .is5xxServerError();
+                .is4xxClientError();
     }
 
 }
